@@ -20,8 +20,8 @@ Nessa pasta encontra-se o source file do bootstrap 5, de forma que possa ser usa
 
 ### css
 Nessa pasta encontra-se o arquivo .css referenciado no href do html. Esse arquivo é obtido através da execução do comando
-''' sass --watch bootstrap/scss/bootstrap.scss css/custom.css '''
-após a instalação local do SASS. O comando '-watch' possui como primeiro parâmetro o path para o arquivo .scss a ser convertido e como segundo parâmetro o path do arquivo que vai ser gerado como outpot após a conversão.
+```sass --watch bootstrap/scss/bootstrap.scss css/custom.css```
+após a instalação local do SASS. O comando `-watch` possui como primeiro parâmetro o path para o arquivo .scss a ser convertido e como segundo parâmetro o path do arquivo que vai ser gerado como outpot após a conversão.
 
 ### img
 Nessa pasta, localizam-se todas as imagens referentes ao projeto.
