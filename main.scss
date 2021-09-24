@@ -8,3 +8,11 @@ $light:        #ffc107 ;
 $dark:         #198754  ;
 
 @import "bootstrap/scss/bootstrap";
+
+.ms-5 {
+  margin-left: ($spacer * 5) !important;
+}
+
+.mt-4 {
+  margin-top: ($spacer * 1.5) !important;
+}
