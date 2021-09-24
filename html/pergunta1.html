@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../css/custom.css" /> <!--Mapeia o .css que é output do boostrap.scss-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> <!--Ajusta para a tela ficar responsiva ao device utilizado. Initial-scale evita zoom out infinito ao abrir tela em um novo device.-->
+    <title>Perguntas</title>
+</head>
+
+<body class="bg-success mt-4 font-family">
+
+
+    <h1 class="text-center display-1">Perguntas!</h1>
+    <p class="text-center lead "><strong>Algum texto falando sobre como funciona as perguntas ou algo assim</strong> </p>
+    <h3 class="text-center">(AQUI VAI SER A PERGUNTA)</h3>
+
+    <div class="container"><!--alinha conteudo -->
+
+        <div class="row"><!--Uma divisão da pagina em uma "Linha" que tem 12 "colunas" -->
+            <div class="col-md-3"></div><!--Descartando 3 "colunas" da linha para certralizar da forma que quero o conteudo -->
+            <div class="col-md-6 bg-primary pt-3 ps-3 pe-3 pb-3 mb-4 mt-2"><!--Usando 6 "colunas", colocando cor de fundo, regulando padding e margin  -->
+                <div class="mb-2"><!--Regulando margin -->
+                    <input type="radio" class="btn-check" name="perg1" id="resp1" autocomplete="off" ><!--Inicializando radio -->
+                    <label class="btn btn-secondary col-md-12 text-start" for="resp1">Checked </label><!--col-md-12 para o botão ficar do tamanho da div que ele se encontra-->
+                </div>
+                <div class="mb-2">
+                    <input type="radio" class="btn-check " name="perg1" id="resp2" autocomplete="off">
+                    <label class="btn btn-secondary col-md-12 text-start" for="resp2">Radio -------------- </label>
+                </div>
+                <div class="mb-2">
+                    <input type="radio" class="btn-check" name="perg1" id="resp3" autocomplete="off" >
+                    <label class="btn btn-secondary col-md-12 text-start" for="resp3">Checked</label>
+                </div>
+                <div class="">
+                    <input type="radio" class="btn-check" name="perg1" id="resp4" autocomplete="off">
+                    <label class="btn btn-secondary col-md-12 text-start" for="resp4">Radio</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row"><!--Criando uma nova linha -->
+            <div class="col-md-2"></div><!-- Descartando 2 colunas para conseguir o alinhamento que desejo -->
+            <div class="col-md-6">
+                <button class="btn btn-secondary"><a class='text-white'href='index.html'>Anterior</a></button><!--Botao que apenas volta para a ultima pergunta -->
+            </div>
+            <div class="col-md-3 ms-10 ">
+                <button type="submit" class="btn btn-secondary" name="resposta1" id="resposta1" ><a class='text-white'href='index.html'>Proximo</a></button><!--Botão que irá salvar a resposta e avançar para proxima pergunta-->
+            </div>
+
+
+        </div>
+    </div>
+
+
+</body>
+</html>

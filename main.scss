@@ -1,13 +1,24 @@
 $primary:      #4169E1 ;
 $secondary:    #191970 ;
 $success:      #ADD8E6 ;
-$info:         #d63384 ;
+$info:         #00BFFF ;
 $warning:      #dc3545;
 $danger:       #fd7e14 ;
-$light:        #ffc107 ;
-$dark:         #198754  ;
+$light:        #C0C0C0 ;
+$dark:         #000000  ;
 
 @import "bootstrap/scss/bootstrap";
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  10:$spacer * 5.1,
+);
 
 .ms-5 {
   margin-left: ($spacer * 5) !important;
