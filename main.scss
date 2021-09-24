@@ -18,6 +18,8 @@ $spacers: (
   10:$spacer * 5.1,
 );
 
-
+$btn-border-radius: 0.7rem;
+$btn-active-bg-shade-amount:     100% ;
+$border-radius:               1rem !default;
 
 @import "bootstrap/scss/bootstrap";
