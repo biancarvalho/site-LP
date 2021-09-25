@@ -3,10 +3,10 @@ $primary:      #4169E1 ;
 $secondary:    #191970 ;
 $success:      #ADD8E6 ;
 $info:         #00BFFF ;
-$warning:      #dc3545;
-$danger:       #fd7e14 ;
+$warning:      #330392;
+$danger:       #4552b8 ;
 $light:        #C0C0C0 ;
-$dark:         #000000  ;
+$dark:         #000000 ;
 
 $spacer: 1rem;
 $spacers: (
@@ -33,5 +33,4 @@ $border-radius:               1rem ;
 .mt-4 {
   margin-top: ($spacer * 1.5) !important;
 }
-
 
