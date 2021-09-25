@@ -8,8 +8,6 @@ $danger:       #fd7e14 ;
 $light:        #C0C0C0 ;
 $dark:         #000000  ;
 
-@import "bootstrap/scss/bootstrap";
-
 $spacer: 1rem;
 $spacers: (
   0: 0,
@@ -21,6 +19,13 @@ $spacers: (
   10:$spacer * 5.1,
 );
 
+$btn-border-radius: 0.7rem;
+$btn-active-bg-shade-amount:     100% ;
+$border-radius:               1rem ;
+
+@import "bootstrap/scss/bootstrap";
+
+
 .ms-5 {
   margin-left: ($spacer * 5) !important;
 }
@@ -29,7 +34,4 @@ $spacers: (
   margin-top: ($spacer * 1.5) !important;
 }
 
-$btn-border-radius: 0.7rem;
-$btn-active-bg-shade-amount:     100% ;
-$border-radius:               1rem ;
 
