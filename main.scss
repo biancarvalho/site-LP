@@ -6,7 +6,10 @@ $info:         #00BFFF ;
 $warning:      #330392;
 $danger:       #4552b8 ;
 $light:        #C0C0C0 ;
-$dark:         #000000 ;
+
+$dark:         #000000  ;
+$white:        #ffffff ;
+
 
 $spacer: 1rem;
 $spacers: (
@@ -20,8 +23,9 @@ $spacers: (
 );
 
 $btn-border-radius: 0.7rem;
-$btn-active-bg-shade-amount:     100% ;
-$border-radius:               1rem ;
+$border-radius:     1rem ;
+
+$btn-active-bg-tint-amount:   100%;
 
 @import "bootstrap/scss/bootstrap";
 
@@ -32,5 +36,12 @@ $border-radius:               1rem ;
 
 .mt-4 {
   margin-top: ($spacer * 1.5) !important;
+}
+
+
+
+.btn-perg:hover{
+    background-color: $white ;
+    transition: background 0.4s;
 }
 
