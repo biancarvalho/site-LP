@@ -3,11 +3,13 @@ $primary:      #4169E1 ;
 $secondary:    #191970 ;
 $success:      #ADD8E6 ;
 $info:         #00BFFF ;
-$warning:      #dc3545;
-$danger:       #fd7e14 ;
+$warning:      #330392;
+$danger:       #4552b8 ;
 $light:        #C0C0C0 ;
+
 $dark:         #000000  ;
 $white:        #ffffff ;
+
 
 $spacer: 1rem;
 $spacers: (
@@ -37,7 +39,9 @@ $btn-active-bg-tint-amount:   100%;
 }
 
 
+
 .btn-perg:hover{
     background-color: $white ;
     transition: background 0.4s;
 }
+
