@@ -8716,4 +8716,14 @@ textarea.form-control-lg {
 .titulop {
   font-family: 'Koh Santepheap', cursive; }
 
+
+.dandantwo {
+  height: 415px;
+  overflow-y: scroll; }
+
+.dandanone {
+  height: 460px;
+  overflow-y: scroll; }
+
+
 /*# sourceMappingURL=custom.css.map */
