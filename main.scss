@@ -1,3 +1,4 @@
+
 $primary:      #4169E1 ;
 $secondary:    #191970 ;
 $success:      #ADD8E6 ;
@@ -6,6 +7,8 @@ $warning:      #dc3545;
 $danger:       #fd7e14 ;
 $light:        #C0C0C0 ;
 $dark:         #000000  ;
+
+@import "bootstrap/scss/bootstrap";
 
 $spacer: 1rem;
 $spacers: (
@@ -18,8 +21,15 @@ $spacers: (
   10:$spacer * 5.1,
 );
 
+.ms-5 {
+  margin-left: ($spacer * 5) !important;
+}
+
+.mt-4 {
+  margin-top: ($spacer * 1.5) !important;
+}
+
 $btn-border-radius: 0.7rem;
 $btn-active-bg-shade-amount:     100% ;
-$border-radius:               1rem !default;
+$border-radius:               1rem ;
 
-@import "bootstrap/scss/bootstrap";

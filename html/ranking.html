@@ -1,20 +1,19 @@
-<html lang="pt-br">
 <!doctype html>
 <html lang="pt-br">
+
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="../css/custom.css" />
-
   </head>
-  <body>
-	<!-- Barra de navegação criada a partir do Bootstrap 5 -->
+
+  <body class="bg-secondary">
+<!-- Barra de navegação criada a partir do Bootstrap 5 -->
     <nav class="navbar navbar-expand navbar-dark bg-primary">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">
-				<img src="../img/logo.png" alt="logo do site" width="24" height="30"
+				<img src="../img/logo.png" alt="logo do site" width="24" height="30">
 			</a>
 			<a class="navbar-brand" href="#"></a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +22,7 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 			<li class="nav-item">
-			  <a class="nav-link active" aria-current="page" href="#">Página inicial</a>
+			  <a class="nav-link active" aria-current="page" href="../html/index.html">Página inicial</a>
 			</li>
 			<li class="nav-item">
 			  <a class="nav-link" href="#">Chat</a>
@@ -38,25 +37,22 @@
 			  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 				<li><a class="dropdown-item" href="#">Mudar e-mail</a></li>
 				<li><a class="dropdown-item" href="#">Mudar senha</a></li>
-				<li><hr class="dropdown-divider"></li>
 				<li><a class="dropdown-item" href="#">Sair</a></li>
 			  </ul>
 			</li>
 		  </ul>
 		</div>
-		</div>
+        </div>
 	</nav>
 
-
-</body>
 	<!-- Utilizando container a partir do Bootstrap 5  para escrever na página -->
-	<div class="container-fluid">
-		<h1>Ranking</h1>
-		<p>Aqui estão as pessoas que deram match com você. Não perca tempo, o link para o chat está logo ali embaixo! ;)</p>
+	<div class="container-fluid text-white">
+		<h1 class="mx-auto mt-4" style="width: 200px;">Ranking</h1>
+		<p class="ms-5 mt-4">Aqui estão as pessoas que deram match com você. Não perca tempo, o link para o chat está logo ali embaixo! ;) </p>
 	</div>
 	<!-- Grid que utiliza containers feita a partir do Bootstrap 5 -->
-	<div class="container">
-	  <div class="row">
+	<div class="container mt-4 text-white">
+	  <div class="row mx-auto" style="width: 220px;">
 		<div class="col">
 		  <p>Chinchila</p>
 		  <p>Unicórnio</p>
@@ -75,6 +71,8 @@
 	</div>
 
 	<!-- Botão criado a partir do Bootstrap 5 -->
-	<a class="btn btn-primary bg-primary" class="mr-5" href="#" role="button" ">Ir para o seu chat</a>
+	<div class="mx-auto" style="width: 200px;">
+	<a class="mt-4 btn btn-success bg-success text-black" href="#" role="button">Ir para o seu chat</a>
+	</div>
   </body>
 </html>
