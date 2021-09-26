@@ -9,8 +9,6 @@ $light:        #C0C0C0 ;
 
 $dark:         #000000  ;
 $white:        #ffffff ;
-$grey:         #C0C0C0 ;
-$soft-blue: #00BFFF;
 
 
 $spacer: 1rem;
@@ -27,9 +25,9 @@ $spacers: (
 $btn-border-radius: 0.7rem;
 $border-radius:     1rem ;
 
-$form-label-color: $white;
-
 $btn-active-bg-tint-amount:   100%;
+
+$grid-columns: 2;
 
 @import "bootstrap/scss/bootstrap";
 
@@ -62,19 +60,5 @@ font-family: 'Koh Santepheap', cursive;
   height: 460px;
   overflow-y: scroll;
 }
+	
 
-.bg-white {
-    background: $white;
-}
-
-.bg-grey {
-    background: $grey;
-}
-
-.bg-soft-blue {
-    background: $soft-blue;
-}
-
-.bg-blue{
-    background:  $primary;
-}
