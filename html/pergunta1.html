@@ -22,47 +22,53 @@
 		</div>
 
 	</nav>
+    <div class="perguntas">
 
-    <h1 class="text-center display-1 titulop text-white">Perguntas!</h1>
+
+    <h1 class="text-center display-1 titulo text-white mt-2">Perguntas!</h1>
     <p class="text-center lead text-white"><strong>Escolha a alternativa que mais te representa</strong> </p>
     <h3 class="text-center text-white">(AQUI VAI SER A PERGUNTA)</h3>
 
-    <div class="container" ><!--alinha conteudo -->
+    <div class="container"><!--alinha conteudo -->
+
     <!-- Formulario ainda não enviar os dados, vi diversas maneiras de como preparar a estrutura para isso, mas achei melhor implementar na hora que realmente será usado-->
+
         <div class="row"><!--Uma divisão da pagina em uma "Linha" que tem 12 "colunas" -->
-            <div class="col-md-3"></div><!--Descartando 3 "colunas" da linha para certralizar da forma que quero o conteudo -->
-            <div class="col-md-6 bg-primary pt-3 ps-3 pe-3 pb-3 mb-4 mt-2 br-1 rounded "><!--Usando 6 "colunas", colocando cor de fundo, regulando padding e margin  -->
+
+            <div class="col-lg-3 col-md-2 col-1"></div><!--Descartando 3 "colunas" da linha para certralizar da forma que quero o conteudo -->
+
+            <div class="col-lg-6 col-md-8 col-10 bg-primary pt-3 ps-3 pe-3 pb-3 mb-4 mt-2 br-1 rounded "><!--Usando 6 "colunas", colocando cor de fundo, regulando padding e margin  -->
                 <div class="mb-2"><!--Regulando margin -->
                     <input type="radio" class="btn-check" name="perg1" id="resp1" autocomplete="off" ><!--Inicializando radio -->
-                    <label class="btn btn-success btn-perg col-md-12 text-start" for="resp1"><strong>Opção numero 1</strong></label><!--col-md-12 para o botão ficar do tamanho da div que ele se encontra-->
+                    <label class="btn btn-success btn-perg col-12 text-start" for="resp1"><strong>Opção numero 1</strong></label><!--col-md-12 para o botão ficar do tamanho da div que ele se encontra-->
                 </div>
                 <div class="mb-2">
                     <input type="radio" class="btn-check " name="perg1" id="resp2" autocomplete="off">
-                    <label class="btn btn-success btn-perg col-md-12 text-start" for="resp2"><strong>Opção numero 2</strong></label>
+                    <label class="btn btn-success btn-perg col-12 text-start" for="resp2"><strong>Opção numero 2</strong></label>
                 </div>
                 <div class="mb-2">
                     <input type="radio" class="btn-check" name="perg1" id="resp3" autocomplete="off" >
-                    <label class="btn btn-success btn-perg col-md-12 text-start" for="resp3"><strong>Opção numero 3</strong></label>
+                    <label class="btn btn-success btn-perg col-12 text-start" for="resp3"><strong>Opção numero 3</strong></label>
                 </div>
                 <div class="">
                     <input type="radio" class="btn-check " name="perg1" id="resp4" autocomplete="off" >
-                    <label class="btn btn-success btn-perg col-md-12 text-start" for="resp4"><strong>Opção numero 4</strong></label>
+                    <label class="btn btn-success btn-perg col-12 text-start" for="resp4"><strong>Opção numero 4</strong></label>
                 </div>
             </div>
         </div>
 
+        <div class="container">
         <div class="row"><!--Criando uma nova linha -->
-            <div class="col-md-2"></div><!-- Descartando 2 colunas para conseguir o alinhamento que desejo -->
-            <div class="col-md-6">
-                <a class='text-white' href='chat.html'><button class="btn btn-primary">Anterior</button></a><!--Botao que apenas volta para a ultima pergunta -->
-            </div>
-            <div class="col-md-3 ms-10 ">
-                <a class='text-white' href='ranking.html'><button type="submit" class="btn btn-primary" name="resposta1" id="resposta1" >Proximo</button></a><!--Botão que irá salvar a resposta e avançar para proxima pergunta-->
-            </div>
-
-
-        </div>
+            <div class="col-lg-2 col-md-1"></div><!-- Descartando 2 colunas para conseguir o alinhamento que desejo -->
+                <div class="col-lg-8 col-md-10 btn-alin ">
+                    <a class='text-white' href='chat.html'><button class="btn btn-primary " >Anterior</button></a><!--Botao que apenas volta para a ultima pergunta -->
+                    <a class='text-white ' href='ranking.html'><button type="submit" class="btn btn-primary"  name="resposta1" id="resposta1" >Proximo</button></a><!--Botão que irá salvar a resposta e avançar para proxima pergunta-->
+                </div>
     </div>
+    </div>
+    </div>
+    </div>
+  
     <footer class="bg-light text-muted mt-4">
 		<div class="container text-center small">
 			<div class="row">
@@ -70,6 +76,7 @@
 			</div>
 		</div>
 	</footer>
+
 
 </body>
 </html>
