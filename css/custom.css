@@ -11210,14 +11210,14 @@ textarea.form-control-lg {
 }
 
 .dandantwo {
-  height: 415px;
-  overflow-y: scroll;
-}
+
+  height: 435px;
+  overflow-y: scroll; }
 
 .dandanone {
-  height: 460px;
-  overflow-y: scroll;
-}
+  height: 480px;
+  overflow-y: scroll; }
+
 
 .bg-white {
   background: #ffffff;
