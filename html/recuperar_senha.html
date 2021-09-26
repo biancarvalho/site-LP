@@ -29,30 +29,31 @@
         </div>
     </nav>
 
-    <!--Body-->
-    <table>
-        <tbody>
-            <tr>
-                <td>
-                    <img alt="imagem ilustrativa de login" src="../img/login.png">
-                </td>
-                <td>
-                    <div>
-                        <h1>Forgot Password</h1>
-                        <p>New Password</p>
-                    </div>
-                    <div>
-                        <div>
-                            <h3>Please enter Email</h3>
-                            <input />
+    <!--Section Recuperar Senha-->
+        <div class="container container-table position-relative">
+            <div class="row mx-auto mt-4">
+                <div class="col bg-soft-blue text-center">
+                    <img class="img-responsive mt-5" alt="imagem ilustrativa de login" src="../img/login.png">
+                </div>
+                <div class="col bg-primary">
+                    <div class="bg-primary position-relative p-2">
+                        <div class="text-center mt-2 p-2">
+                            <h2>Esqueceu a senha?</h2>
+                            <p>Recupere sua senha</p>
                         </div>
                     </div>
-                    <div>
-                        <button>SEND</button>
+                    <div class="container bg-white position-relative p-3 mb-3">
+                        <form>
+                            <label for="input-recuperar-senha">Insira seu email</label>
+                            <input class="form-control mt-1" id="input-recuperar-senha" type="text" placeholder="Insira seu email" />
+                        </form>
+                        <div class="text-center m-2 p-1">
+                            <button type="submit" class="btn btn-dark">Enviar</button>
+                        </div>
+                        
                     </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                </div>
+        </div>
+       </div>
     </body>
 </html>
