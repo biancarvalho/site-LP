@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4632eca8-a847-4ddb-b05a-a4b1fc6787cc" name="Default Changelist" comment="mudança na cor dark">
-      <change beforePath="$PROJECT_DIR$/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/custom.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/custom.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/main.scss" afterDir="false" />
+    <list default="true" id="4632eca8-a847-4ddb-b05a-a4b1fc6787cc" name="Default Changelist" comment="pequenas udanças de estilo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/ranking.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/ranking.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632695228549</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="pequenas udanças de estilo">
+      <created>1632695324151</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1632695324151</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -135,6 +141,7 @@
     <MESSAGE value="limite máximo de largura dos cards do ranking" />
     <MESSAGE value="mudando o estilo nas páginas inicial e ranking" />
     <MESSAGE value="mudança na cor dark" />
-    <option name="LAST_COMMIT_MESSAGE" value="mudança na cor dark" />
+    <MESSAGE value="pequenas udanças de estilo" />
+    <option name="LAST_COMMIT_MESSAGE" value="pequenas udanças de estilo" />
   </component>
 </project>
