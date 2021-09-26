@@ -78,3 +78,13 @@ font-family: 'Koh Santepheap', cursive;
 .bg-blue{
     background:  $primary;
 }
+
+.perguntas{
+    .titulo{
+        font-family: 'Koh Santepheap', cursive;
+    }
+    .btn-alin{
+        display:flex;
+        justify-content:space-between
+    }
+}
