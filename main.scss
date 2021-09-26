@@ -1,13 +1,13 @@
 
 $primary:      #4169E1 ;
-$secondary:    #191970 ;
+$secondary:    #EEEEEE ;
 $success:      #ADD8E6 ;
 $info:         #00BFFF ;
 $warning:      #330392;
 $danger:       #4552b8 ;
 $light:        #C0C0C0 ;
 
-$dark:         #000000  ;
+$dark:         #333333  ;
 $white:        #ffffff ;
 
 
@@ -78,4 +78,8 @@ font-family: 'Koh Santepheap', cursive;
         display:flex;
         justify-content:space-between
     }
+}
+
+#ranking-cards {
+    max-width: 900px;
 }
