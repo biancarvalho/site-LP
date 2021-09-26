@@ -8,7 +8,7 @@
 	  <!-- Bootstrap Javascript -->
 	<script src="../bootstrap/dist/js/bootstrap.js" defer></script>
 </head>
-<body class ="bg-secondary font-family">
+<body class="bg-secondary font-family">
 
     <!--BARRA DE NAVEGAÇÃO -->
     <nav class="navbar navbar-expand navbar-dark bg-primary">
@@ -23,53 +23,60 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../html/pagina_inicial.html">EMAp Encontros</a>
+                        <a class="nav-link active" aria-current="page" href="../html/login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../html/cadastro.html">Cadastrar</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!--Body-->
-    <table>
-        <tbody>
-            <tr>
-                <td>
-                    <img alt="imagem ilustrativa de login" src="../img/login.png">
-                </td>
-                <td>
-                    <div>
-                        <h1>Create New Account</h1>
-                        <p> Already registered? 
-                            <a href="../html/login.html">Login</a>
-                        </p>
-                    </div>
-                    <div>
-                        <div>
-                            <h3>Please enter your name</h3>
-                            <input />
-                        </div>
-                        <div>
-                            <h3>Please enter Email</h3>
-                            <input />
-                        </div>
-                        <div>
-                            <h3>Please enter password</h3>
-                            <input type="password" />
-                        </div>
-                        <div>
-                            <h3>Please enter data of birth</h3>
-                            <input type="date"/>
+    <!-- Section Cadastro-->
+    <div class="container container-table position-relative">
+        <div class="row mx-auto mt-4">
+            <div class="col-md-4 mt-4 text-center">
+                <img class="img-cadastro me-4" alt="imagem ilustrativa de cadastro" src="../img/cadastro.png">
+            </div>
+            <div class="col-md-8 bg-white">
+                <div class="container mt-5">
+                    <div class="position-relative p-2">
+                        <div class="text-center mt-2 p-2">
+                            <h1>Cadastre-se</h1>
+                            <p>
+                                Já possui cadastro? Realize seu
+                                <a aria-current="page" href="../html/login.html">login</a>
+                            </p>
                         </div>
                     </div>
-                        <div>
-                            <button>SIGN UP</button>
+                    <div class="container bg-white position-relative p-3 mb-2">
+                        <form>
+                            <div class="form-group">
+                                <label for="input-nome-cadastro">Insira seu nome completo</label>
+                                <input class="form-control mt-1" id="input-nome-cadastro" type="text" placeholder="Insira seu nome completo" />
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="input-email-cadastro">Insira seu email</label>
+                                <input class="form-control mt-1" id="input-email-cadastro" type="text" placeholder="Insira seu email" />
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="input-senha-cadastro">Insira uma senha</label>
+                                <input class="form-control mt-1" id="input-senha-cadastro" type="password" placeholder="Insira uma senha" />
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="input-birth-cadastro">Insira sua data de nascimento</label>
+                                <input class="form-control mt-1" id="input-birth-cadastro" type="date" placeholder="Insira sua data de nascimento" />
+                            </div>
+                        </form>
+                        <div class="text-center m-2 p-1">
+                            <button type="submit" class="btn btn-dark">Cadastrar</button>
                         </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 	<footer class="bg-light text-muted mt-4">
 		<div class="container text-center small">
 			<div class="row">
@@ -78,5 +85,5 @@
 		</div>
 	</footer>
 
-    </body>
+</body>
 </html>

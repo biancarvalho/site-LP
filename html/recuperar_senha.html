@@ -23,8 +23,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../html/pagina_inicial.html">EMAp Encontros</a>
-                </ul>
+                        <a class="nav-link active" aria-current="page" href="../html/login.html">Login</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../html/cadastro.html">Cadastrar</a></li>
+                 </ul>
             </div>
         </div>
     </nav>
@@ -32,30 +34,29 @@
     <!--Section Recuperar Senha-->
         <div class="container container-table position-relative">
             <div class="row mx-auto mt-4">
-                <div class="col bg-soft-blue text-center">
-                    <img class="img-responsive mt-5" alt="imagem ilustrativa de login" src="../img/login.png">
+                <div class="col-md-4 bg-white text-center">
+                    <img class="img-fluid m-3" alt="imagem ilustrativa de senha" src="../img/forgot-password.png">
                 </div>
-                <div class="col bg-primary">
-                    <div class="bg-primary position-relative p-2">
-                        <div class="text-center mt-2 p-2">
-                            <h2>Esqueceu a senha?</h2>
-                            <p>Recupere sua senha</p>
+                <div class="col-md-8 bg-white">
+                    <div class="container mt-5">
+                        <div class="position-relative p-2">
+                            <div class="text-center mt-2 p-2">
+                                <h2>Esqueceu a senha?</h2>
+                            </div>
+                        </div>
+                        <div class="container bg-white position-relative p-3 mb-3">
+                            <form>
+                                <label for="input-recuperar-senha">Insira seu email</label>
+                                <input class="form-control mt-1" id="input-recuperar-senha" type="text" placeholder="Insira seu email" />
+                            </form>
+                            <div class="text-center m-2 p-1">
+                                <button type="submit" class="btn btn-dark">Enviar</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="container bg-white position-relative p-3 mb-3">
-                        <form>
-                            <label for="input-recuperar-senha">Insira seu email</label>
-                            <input class="form-control mt-1" id="input-recuperar-senha" type="text" placeholder="Insira seu email" />
-                        </form>
-                        <div class="text-center m-2 p-1">
-                            <button type="submit" class="btn btn-dark">Enviar</button>
-                        </div>
-                        
-                    </div>
                 </div>
-        </div>
-       </div>
-
+                </div>
+            </div>
 
   <footer class="bg-light text-muted mt-4">
 		<div class="container text-center small">
@@ -64,6 +65,5 @@
 			</div>
 		</div>
 	</footer>
-
     </body>
 </html>
