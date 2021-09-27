@@ -66,6 +66,26 @@ font-family: 'Koh Santepheap', cursive;
   overflow-y: scroll;
 }
 
+::-webkit-scrollbar{
+  border-radius: 7px;
+    width: 10px;
+}
+
+::-webkit-scrollbar-button{
+  border-radius: 7px;
+background-color: $white;
+}
+
+::-webkit-scrollbar-track-piece{
+background-color: $light;
+}
+
+::-webkit-scrollbar-thumb{
+background-color: $white;
+border-radius: 7px;
+}
+
+
 .dandanone{
   @include dandan;
   height: 480px;
