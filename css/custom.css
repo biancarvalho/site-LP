@@ -1,5 +1,4 @@
 
-
 /*!
  * Bootstrap v5.0.2 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -8718,13 +8717,24 @@ textarea.form-control-lg {
 .titulop {
   font-family: 'Koh Santepheap', cursive; }
 
-.dandantwo {
-  overflow-y: scroll;
-  height: 435px; }
+.message-you, .message-me {
+  margin-top: 0.25rem !important;
+  padding: 0.25rem !important; }
+
+.message-you {
+  background-color: #ffffff; }
+
+.message-me {
+  background-color: #ADD8E6;
+  text-align: end; }
 
 .dandanone {
   overflow-y: scroll;
   height: 480px; }
+
+.dandantwo {
+  overflow-y: scroll;
+  height: 435px; }
 
 .bg-white {
   background: #ffffff; }
@@ -8741,5 +8751,4 @@ textarea.form-control-lg {
 #ranking-cards {
   max-width: 900px; }
 
-/*# sourceMappingURL=custom.css.map */
-
+/*# sourceMappingURL=custom.css.map *
