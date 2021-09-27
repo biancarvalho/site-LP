@@ -2180,7 +2180,6 @@ progress {
 }
 .form-label {
   margin-bottom: 0.5rem;
-  color: #ffffff;
 }
 
 .col-form-label {
@@ -2189,7 +2188,6 @@ progress {
   margin-bottom: 0;
   font-size: inherit;
   line-height: 1.5;
-  color: #ffffff;
 }
 
 .col-form-label-lg {
@@ -11200,35 +11198,22 @@ textarea.form-control-lg {
   margin-top: 1.5rem !important;
 }
 
-.btn-perg:hover {
-  background-color: #ffffff;
-  transition: background 0.4s;
-}
-
 .titulop {
   font-family: "Koh Santepheap", cursive;
 }
 
 .dandantwo {
-
   height: 435px;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+}
 
 .dandanone {
   height: 480px;
-  overflow-y: scroll; }
-
+  overflow-y: scroll;
+}
 
 .bg-white {
   background: #ffffff;
-}
-
-.bg-grey {
-  background: #C0C0C0;
-}
-
-.bg-soft-blue {
-  background: #00BFFF;
 }
 
 .bg-blue {
@@ -11241,6 +11226,10 @@ textarea.form-control-lg {
 .perguntas .btn-alin {
   display: flex;
   justify-content: space-between;
+}
+.perguntas .btn-perg:hover {
+  background-color: #ffffff;
+  transition: 0.4s;
 }
 
 /*# sourceMappingURL=custom.css.map */
