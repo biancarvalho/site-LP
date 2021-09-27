@@ -8716,13 +8716,24 @@ textarea.form-control-lg {
 .titulop {
   font-family: 'Koh Santepheap', cursive; }
 
-.dandantwo {
-  overflow-y: scroll;
-  height: 435px; }
+.message-you, .message-me {
+  margin-top: 0.25rem !important;
+  padding: 0.25rem !important; }
+
+.message-you {
+  background-color: #ffffff; }
+
+.message-me {
+  background-color: #ADD8E6;
+  text-align: end; }
 
 .dandanone {
   overflow-y: scroll;
   height: 480px; }
+
+.dandantwo {
+  overflow-y: scroll;
+  height: 435px; }
 
 .bg-white {
   background: #ffffff; }

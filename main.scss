@@ -49,18 +49,34 @@ $btn-active-bg-tint-amount:   100%;
 font-family: 'Koh Santepheap', cursive;
 }
 
-@mixin dandan{
-  overflow-y: scroll;
+%bp-message{
+  margin-top: ($spacer * .25) !important;
+  padding: ($spacer * .25) !important;
 }
 
-.dandantwo{
-  @include dandan;
-  height: 435px;
+.message-you{
+  @extend %bp-message;
+  background-color: $white;
+}
+
+.message-me{
+  @extend %bp-message;
+  background-color: $success;
+  text-align: end;
+}
+
+@mixin dandan{
+  overflow-y: scroll;
 }
 
 .dandanone{
   @include dandan;
   height: 480px;
+}
+
+.dandantwo{
+  @include dandan;
+  height: 435px;
 }
 
 .bg-white {
@@ -85,3 +101,4 @@ font-family: 'Koh Santepheap', cursive;
 #ranking-cards {
     max-width: 900px;
 }
+
