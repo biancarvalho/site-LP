@@ -27,6 +27,7 @@ $border-radius:     1rem ;
 
 $btn-active-bg-tint-amount:   100%;
 
+
 @import "bootstrap/scss/bootstrap";
 
 
@@ -40,10 +41,6 @@ $btn-active-bg-tint-amount:   100%;
 
 
 
-.btn-perg:hover{
-    background-color: $white ;
-    transition: background 0.4s;
-}
 
 .titulop{
 font-family: 'Koh Santepheap', cursive;
@@ -95,6 +92,10 @@ font-family: 'Koh Santepheap', cursive;
     .btn-alin{
         display:flex;
         justify-content:space-between
+    }
+    .btn-perg:hover{
+    background-color: $white ;
+    transition: 0.4s;
     }
 }
 
