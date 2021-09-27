@@ -30,7 +30,7 @@ após a instalação local do SASS.
 ### img
 Nessa pasta, localizam-se todas as imagens referentes ao projeto.
 
-## html
+### html
 Nessa pasta, encontram-se todas as páginas HTML desenvolvidas pelo grupo.
 
 ## Processo de Desenvolvimento
@@ -39,3 +39,5 @@ O processo aconteceu com o desenvolvimento de páginas HTML estilizadas por todo
 ### Testes de Acessibilidade
 Afim de seguir o padrão WCAG para o nível AAA, o grupo utilizou a ferramente WAVE para fazer a varredura dos HTML's e encontrar possíveis erros para corrigí-los.
 
+## Fluxo 
+A sequência de páginas perguntas com perguntas é acessível após o botão de realizar cadastro.
