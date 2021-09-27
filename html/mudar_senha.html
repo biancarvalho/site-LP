@@ -10,26 +10,43 @@
 </head>
 <body class="bg-secondary font-family d-flex flex-column min-vh-100">
 
-    <!--BARRA DE NAVEGAÇÃO -->
+ <!-- Barra de navegação criada a partir do Bootstrap 5 -->
     <nav class="navbar navbar-expand navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="../img/logo.png" alt="logo do site" width="24" height="30">
-            </a>
-            <a class="navbar-brand" href="#"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../html/login.html">Login</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../html/cadastro.html">Cadastrar</a></li>
-                 </ul>
-            </div>
-        </div>
-    </nav>
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">
+				<img src="../img/logo.png" alt="logo do site" width="30" height="30">
+			</a>
+			<a class="navbar-brand" href="#"></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			<li class="nav-item">
+			  <a class="nav-link" href="../html/pagina_inicial.html">Página Inicial</a>
+			</li>
+			  <li class="nav-item">
+			  <a class="nav-link" href="../html/chat.html">Chat</a>
+			</li>
+			  <li class="nav-item">
+			  <a class="nav-link" href="../html/ranking.html">Ranking</a>
+			</li>
+			<li class="nav-item dropdown">
+			  <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+              aria-current="page" >
+				Configurações
+			  </a>
+			  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+				<li><a class="dropdown-item" href="../html/mudar_email.html">Mudar e-mail</a></li>
+				<li><a class="dropdown-item" href="../html/mudar_senha.html">Mudar senha</a></li>
+				<li><a class="dropdown-item" href="../html/login.html">Sair</a></li>
+			  </ul>
+			</li>
+		  </ul>
+		</div>
+		</div>
+	</nav>
+
 
     <!--Section Mudar Senha-->
         <div class="container container-table position-relative">

@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4632eca8-a847-4ddb-b05a-a4b1fc6787cc" name="Default Changelist" comment="pequenas udanças de estilo" />
+    <list default="true" id="4632eca8-a847-4ddb-b05a-a4b1fc6787cc" name="Default Changelist" comment="pequenas udanças de estilo">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.sass-cache/d62863e13f08c8ed8332d70d389806612771e3a2/main.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/.sass-cache/d62863e13f08c8ed8332d70d389806612771e3a2/main.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/chat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/mudar_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/mudar_email.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/mudar_senha.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/mudar_senha.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/pagina_inicial.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pagina_inicial.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/ranking.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/ranking.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +34,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
