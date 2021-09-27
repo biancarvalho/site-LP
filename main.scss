@@ -49,14 +49,18 @@ $btn-active-bg-tint-amount:   100%;
 font-family: 'Koh Santepheap', cursive;
 }
 
-.dandantwo{
-  height: 435px;
+@mixin dandan{
   overflow-y: scroll;
 }
 
+.dandantwo{
+  @include dandan;
+  height: 435px;
+}
+
 .dandanone{
+  @include dandan;
   height: 480px;
-  overflow-y: scroll;
 }
 
 .bg-white {
