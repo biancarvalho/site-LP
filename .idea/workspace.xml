@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4632eca8-a847-4ddb-b05a-a4b1fc6787cc" name="Default Changelist" comment="pequenas udanças de estilo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/chat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/pagina_inicial.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pagina_inicial.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/pergunta1.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pergunta1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/mudar_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/mudar_email.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/mudar_senha.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/mudar_senha.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/recuperar_senha.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/recuperar_senha.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
