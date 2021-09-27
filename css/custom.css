@@ -8717,12 +8717,12 @@ textarea.form-control-lg {
   font-family: 'Koh Santepheap', cursive; }
 
 .dandantwo {
-  height: 435px;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  height: 435px; }
 
 .dandanone {
-  height: 480px;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  height: 480px; }
 
 .bg-white {
   background: #ffffff; }
