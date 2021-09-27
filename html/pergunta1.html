@@ -7,7 +7,7 @@
 	  <!-- Bootstrap Javascript -->
 	<script src="../bootstrap/dist/js/bootstrap.js" defer></script> 
     <meta name="viewport" content="width=device-width, initial-scale=1" /> <!--Ajusta para a tela ficar responsiva ao device utilizado. Initial-scale evita zoom out infinito ao abrir tela em um novo device.-->
-    <title>Perguntas</title>
+    <title>Questionário | Tindemap</title>
 </head>
 <!-- Barra de navegacao, vazia pois nessa pagina não se pode mover para outras, presente apenas pela questão estetica -->
 <body class="bg-secondary font-family d-flex flex-column min-vh-100">
@@ -20,44 +20,46 @@
 		</div>
 
 	</nav>
-    <div class="perguntas mb-3"><!--Classe para orientar elementos especificos desse tipo de pagina -->
+
+    <div class="perguntas mb-3"> <!--Classe para orientar elementos especificos desse tipo de pagina -->
 
     <!-- TEXTO INICIAL -->
 
-    <h1 class="text-center display-1 mt-2"><strong>Perguntas!</strong></h1>
-    <p class="text-center lead"><strong>Escolha a alternativa que mais te representa.</strong> </p>
-    <h3 class="text-center">O que você prefere fazer com seu tempo livre?</h3>
+    <h1 class="text-center display-1 mt-2">Questionário</h1>
+    <p class="text-center lead">Escolha a alternativa que mais te representa!</p>
 
     <div class="container"><!--alinha conteudo -->
 
     <!-- Formulario ainda não enviar os dados, vi diversas maneiras de como preparar a estrutura para isso, mas achei melhor implementar na hora que realmente será usado-->
 
         <!--AREA DAS ALTERNATIVAS -->
-
         <div class="row"><!--Uma divisão da pagina em uma "Linha" que tem 12 "colunas" -->
 
-            <div class="col-lg-3 col-md-2 col-1"></div><!--Descartando 3 "colunas" da linha para certralizar da forma que quero o conteudo -->
+            <div class="col-lg-2 col-md-1"></div><!--Descartando 3 "colunas" da linha para centralizar da forma que quero o conteudo -->
 
-            <div class="col-lg-6 col-md-8 col-10 bg-primary pt-3 ps-3 pe-3 pb-3 mb-4 mt-2 br-1 rounded "><!--Usando 6 "colunas", colocando cor de fundo, regulando padding e margin  -->
+            <div class="col-lg-8 col-md-10 bg-light pt-3 ps-3 pe-3 pb-3 mb-4 mt-2 br-1 rounded "><!--Usando 6 "colunas", colocando cor de fundo, regulando padding e margin  -->
+                <p class="h3 text-center mb-3">O que você prefere fazer em seu tempo livre?</p>
+
+
                 <div class="mb-2"><!--Regulando margin -->
                     <input type="radio" class="btn-check" name="perg1" id="resp1"><!--Inicializando radio -->
-                    <label class="btn btn-success btn-perg col-12 text-start" for="resp1"><strong>Sair para beber com os amigos.</strong></label><!--col-md-12 para o botão ficar do tamanho da div que ele se encontra-->
+                    <label class="btn btn-secondary btn-perg col-12 text-start" for="resp1">Sair para beber com os amigos.</label><!--col-md-12 para o botão ficar do tamanho da div que ele se encontra-->
                 </div>
                 <div class="mb-2">
                     <input type="radio" class="btn-check " name="perg1" id="resp2">
-                    <label class="btn btn-success btn-perg col-12 text-start" for="resp2"><strong>Sair para comer com os amigos.</strong></label>
+                    <label class="btn btn-secondary btn-perg col-12 text-start" for="resp2">Sair para comer com os amigos.</label>
                 </div>
                 <div class="mb-2">
                     <input type="radio" class="btn-check" name="perg1" id="resp3">
-                    <label class="btn btn-success btn-perg col-12 text-start" for="resp3"><strong>Ficar em casa jogando.</strong></label>
+                    <label class="btn btn-secondary btn-perg col-12 text-start" for="resp3">Ficar em casa jogando.</label>
                 </div>
                 <div class="mb-2">
                     <input type="radio" class="btn-check" name="perg1" id="resp4">
-                    <label class="btn btn-success btn-perg col-12 text-start" for="resp4"><strong>Ficar em casa assistindo séries/filmes.</strong></label>
+                    <label class="btn btn-secondary btn-perg col-12 text-start" for="resp4">Ficar em casa assistindo séries/filmes.</label>
                 </div>
                 <div class="">
                     <input type="radio" class="btn-check " name="perg1" id="resp5">
-                    <label class="btn btn-success btn-perg col-12 text-start" for="resp5"><strong>Estudar coisas diferentes.</strong></label>
+                    <label class="btn btn-secondary btn-perg col-12 text-start" for="resp5">Estudar coisas diferentes.</label>
                 </div>
             </div>
         </div>
@@ -68,7 +70,7 @@
         <div class="row"><!--Criando uma nova linha -->
             <div class="col-9"></div><!-- Descartando 2 colunas para conseguir o alinhamento que desejo -->
                 <div class="col-3 btn-alin ">
-                    <a href='pergunta2.html' class="btn btn-primary active" role="button">Próximo</a><!--Botão que irá salvar a resposta e avançar para proxima pergunta-->
+                    <a href='pergunta2.html' class="btn btn-primary" role="button">Próximo</a><!--Botão que irá salvar a resposta e avançar para proxima pergunta-->
                 </div>
     </div>
     </div>
