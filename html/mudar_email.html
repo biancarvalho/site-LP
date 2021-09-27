@@ -10,6 +10,59 @@
 </head>
 <body class="bg-secondary font-family d-flex flex-column min-vh-100">
 
+    <!--BARRA DE NAVEGAÇÃO -->
+    <nav class="navbar navbar-expand navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../img/logo.png" alt="logo do site" width="24" height="30">
+            </a>
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../html/login.html">Login</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../html/cadastro.html">Cadastrar</a></li>
+                 </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Section Mudar Senha-->
+        <div class="container container-table position-relative">
+            <div class="row mx-auto mt-4">
+                <div class="col-md-4 bg-white text-center">
+                    <img class="img-fluid m-3" alt="imagem ilustrativa de senha" src="../img/e-mail.png">
+                </div>
+                <div class="col-md-8 bg-white">
+                    <div class="container mt-5">
+                        <div class="position-relative p-2">
+                            <div class="text-center mt-2 p-2">
+                                <h2>Mude seu e-mail</h2>
+                            </div>
+                        </div>
+                        <div class="container bg-white position-relative p-3 mb-3">
+                            <form>
+                                <label for="input-recuperar-senha">E-mail antigo</label>
+                                <input class="form-control mt-1" id="input-recuperar-senha" type="text" placeholder="Insira seu e-mail antigo" />
+                            	<label for="input-recuperar-senha">Novo e-mail</label>
+                                <input class="form-control mt-1" id="input-recuperar-senha" type="text" placeholder="Insira seu e-mail novo" />
+								<label for="input-recuperar-senha">Confirmar novo e-mail</label>
+                                <input class="form-control mt-1" id="input-recuperar-senha" type="text" placeholder="Insira seu e-mail novo" />
+
+							</form>
+                            <div class="text-center m-2 p-1">
+                                <button type="submit" class="btn btn-dark">Enviar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
     <footer class="footer bg-light text-muted mt-auto">
 		<div class="container text-center small">
 			<div class="row">
