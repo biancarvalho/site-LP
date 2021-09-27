@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="4632eca8-a847-4ddb-b05a-a4b1fc6787cc" name="Default Changelist" comment="pequenas udanças de estilo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.sass-cache/d62863e13f08c8ed8332d70d389806612771e3a2/main.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/.sass-cache/d62863e13f08c8ed8332d70d389806612771e3a2/main.scssc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/cadastro.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/cadastro.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/chat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/mudar_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/mudar_email.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/mudar_senha.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/mudar_senha.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/pagina_inicial.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pagina_inicial.html" afterDir="false" />
