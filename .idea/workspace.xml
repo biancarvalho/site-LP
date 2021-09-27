@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4632eca8-a847-4ddb-b05a-a4b1fc6787cc" name="Default Changelist" comment="muda navbar da recuperação de senha">
+    <list default="true" id="4632eca8-a847-4ddb-b05a-a4b1fc6787cc" name="Default Changelist" comment="pequena correção na página de chat">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/custom.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/custom.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/chat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/mudar_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/mudar_email.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/mudar_senha.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/mudar_senha.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/pagina_inicial.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pagina_inicial.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/pergunta1.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pergunta1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/pergunta3.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pergunta3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/pergunta4.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pergunta4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/pergunta5.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pergunta5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/pergunta6.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pergunta6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/pergunta7.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pergunta7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/ranking.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/ranking.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/recuperar_senha.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/recuperar_senha.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632722217322</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="pequena correção na página de chat">
+      <created>1632724304157</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1632724304157</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -177,6 +193,7 @@
     <MESSAGE value="corrige icone e navbars das págianas de cadastro e login" />
     <MESSAGE value="muda links das páginas de cadastro" />
     <MESSAGE value="muda navbar da recuperação de senha" />
-    <option name="LAST_COMMIT_MESSAGE" value="muda navbar da recuperação de senha" />
+    <MESSAGE value="pequena correção na página de chat" />
+    <option name="LAST_COMMIT_MESSAGE" value="pequena correção na página de chat" />
   </component>
 </project>
