@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4632eca8-a847-4ddb-b05a-a4b1fc6787cc" name="Default Changelist" comment="pequenas udanças de estilo">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="4632eca8-a847-4ddb-b05a-a4b1fc6787cc" name="Default Changelist" comment="correções nas navbars">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.sass-cache/d62863e13f08c8ed8332d70d389806612771e3a2/main.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/.sass-cache/d62863e13f08c8ed8332d70d389806612771e3a2/main.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/chat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/mudar_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/mudar_email.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/mudar_senha.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/mudar_senha.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/pagina_inicial.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pagina_inicial.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/ranking.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/ranking.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/cadastro.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/cadastro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632695324151</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="correções nas navbars">
+      <created>1632720740644</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1632720740644</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -149,6 +151,7 @@
     <MESSAGE value="mudando o estilo nas páginas inicial e ranking" />
     <MESSAGE value="mudança na cor dark" />
     <MESSAGE value="pequenas udanças de estilo" />
-    <option name="LAST_COMMIT_MESSAGE" value="pequenas udanças de estilo" />
+    <MESSAGE value="correções nas navbars" />
+    <option name="LAST_COMMIT_MESSAGE" value="correções nas navbars" />
   </component>
 </project>
