@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4632eca8-a847-4ddb-b05a-a4b1fc6787cc" name="Default Changelist" comment="pequena correção na página de chat">
+    <list default="true" id="4632eca8-a847-4ddb-b05a-a4b1fc6787cc" name="Default Changelist" comment="adicionando borda no corpo e correções do footer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/mudar_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/mudar_email.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/mudar_senha.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/mudar_senha.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/pagina_inicial.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pagina_inicial.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.sass-cache/d62863e13f08c8ed8332d70d389806612771e3a2/main.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/.sass-cache/d62863e13f08c8ed8332d70d389806612771e3a2/main.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/custom.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/custom.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/pergunta1.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pergunta1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/pergunta2.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pergunta2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/pergunta3.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pergunta3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/pergunta4.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pergunta4.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/pergunta5.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pergunta5.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/pergunta6.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pergunta6.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/pergunta7.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/pergunta7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/ranking.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/ranking.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/recuperar_senha.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/recuperar_senha.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/main.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632724304157</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="adicionando borda no corpo e correções do footer">
+      <created>1632725116156</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1632725116156</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,6 +200,7 @@
     <MESSAGE value="muda links das páginas de cadastro" />
     <MESSAGE value="muda navbar da recuperação de senha" />
     <MESSAGE value="pequena correção na página de chat" />
-    <option name="LAST_COMMIT_MESSAGE" value="pequena correção na página de chat" />
+    <MESSAGE value="adicionando borda no corpo e correções do footer" />
+    <option name="LAST_COMMIT_MESSAGE" value="adicionando borda no corpo e correções do footer" />
   </component>
 </project>
