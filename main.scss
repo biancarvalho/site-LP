@@ -1,13 +1,13 @@
 
 $primary:      #4169E1 ;
-$secondary:    #191970 ;
+$secondary:    #EEEEEE ;
 $success:      #ADD8E6 ;
 $info:         #00BFFF ;
 $warning:      #330392;
 $danger:       #4552b8 ;
 $light:        #C0C0C0 ;
 
-$dark:         #000000  ;
+$dark:         #333333  ;
 $white:        #ffffff ;
 
 
@@ -46,14 +46,18 @@ $btn-active-bg-tint-amount:   100%;
 font-family: 'Koh Santepheap', cursive;
 }
 
-.dandantwo{
-  height: 435px;
+@mixin dandan{
   overflow-y: scroll;
 }
 
+.dandantwo{
+  @include dandan;
+  height: 435px;
+}
+
 .dandanone{
+  @include dandan;
   height: 480px;
-  overflow-y: scroll;
 }
 
 .bg-white {
@@ -77,4 +81,8 @@ font-family: 'Koh Santepheap', cursive;
     background-color: $white ;
     transition: 0.4s;
     }
+}
+
+#ranking-cards {
+    max-width: 900px;
 }
