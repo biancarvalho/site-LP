@@ -8723,6 +8723,21 @@ textarea.form-control-lg {
   background-color: #ADD8E6;
   text-align: end; }
 
+::-webkit-scrollbar {
+  border-radius: 7px;
+  width: 10px; }
+
+::-webkit-scrollbar-button {
+  border-radius: 7px;
+  background-color: #ffffff; }
+
+::-webkit-scrollbar-track-piece {
+  background-color: #C0C0C0; }
+
+::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 7px; }
+
 .dandanone {
   overflow-y: scroll;
   height: 480px; }
