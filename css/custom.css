@@ -1,4 +1,3 @@
-
 /*!
  * Bootstrap v5.0.2 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -8710,10 +8709,6 @@ textarea.form-control-lg {
 .mt-4 {
   margin-top: 1.5rem !important; }
 
-.btn-perg:hover {
-  background-color: #ffffff;
-  transition: background 0.4s; }
-
 .titulop {
   font-family: 'Koh Santepheap', cursive; }
 
@@ -8747,8 +8742,11 @@ textarea.form-control-lg {
 .perguntas .btn-alin {
   display: flex;
   justify-content: space-between; }
+.perguntas .btn-perg:hover {
+  background-color: #ffffff;
+  transition: 0.4s; }
 
 #ranking-cards {
   max-width: 900px; }
 
-/*# sourceMappingURL=custom.css.map *
+/*# sourceMappingURL=custom.css.map */
