@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4632eca8-a847-4ddb-b05a-a4b1fc6787cc" name="Default Changelist" comment="corrige icone e navbars das págianas de cadastro e login">
+    <list default="true" id="4632eca8-a847-4ddb-b05a-a4b1fc6787cc" name="Default Changelist" comment="muda links das páginas de cadastro">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/cadastro.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/cadastro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/mudar_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/mudar_email.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/mudar_senha.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/mudar_senha.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/recuperar_senha.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/recuperar_senha.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -134,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632721212062</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="muda links das páginas de cadastro">
+      <created>1632722075099</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1632722075099</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,6 +166,7 @@
     <MESSAGE value="pequenas udanças de estilo" />
     <MESSAGE value="correções nas navbars" />
     <MESSAGE value="corrige icone e navbars das págianas de cadastro e login" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrige icone e navbars das págianas de cadastro e login" />
+    <MESSAGE value="muda links das páginas de cadastro" />
+    <option name="LAST_COMMIT_MESSAGE" value="muda links das páginas de cadastro" />
   </component>
 </project>
