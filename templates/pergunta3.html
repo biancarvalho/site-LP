@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/css/custom.css" />
+	  <!-- Bootstrap Javascript -->
+	<script src="../static/bootstrap/dist/js/bootstrap.js" defer></script>    <meta name="viewport" content="width=device-width, initial-scale=1" /> <!--Ajusta para a tela ficar responsiva ao device utilizado. Initial-scale evita zoom out infinito ao abrir tela em um novo device.-->
+    <title>Questionário | Tindemap</title>
+</head>
+<!-- Barra de navegacao, vazia pois nessa pagina não se pode mover para outras, presente apenas pela questão estetica -->
+<body class="bg-secondary font-family d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand navbar-dark bg-primary">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">
+				<img src="../static/img/logo.png" alt="logo do site" width="30" height="30">
+			</a>
+			<a class="navbar-brand" href="#"></a>
+		</div>
+
+	</nav>
+    <div class="perguntas mb-3"> <!--Classe para orientar elementos especificos desse tipo de pagina -->
+
+    <!-- TEXTO INICIAL -->
+
+    <h1 class="text-center display-1 mt-2">Questionário</h1>
+    <p class="text-center lead">Escolha a alternativa que mais te representa!</p>
+
+    <div class="container"><!--alinha conteudo -->
+
+    <!-- Formulario ainda não enviar os dados, vi diversas maneiras de como preparar a estrutura para isso, mas achei melhor implementar na hora que realmente será usado-->
+
+        <!--AREA DAS ALTERNATIVAS -->
+
+        <div class="row"><!--Uma divisão da pagina em uma "Linha" que tem 12 "colunas" -->
+
+            <div class="col-lg-2 col-md-1"></div><!--Descartando 3 "colunas" da linha para centralizar da forma que quero o conteudo -->
+
+            <div class="col-lg-8 col-md-10 bg-light pt-3 ps-3 pe-3 pb-3 mb-4 mt-2 br-1 rounded "><!--Usando 6 "colunas", colocando cor de fundo, regulando padding e margin  -->
+                <p class="h3 text-center mb-3">Você curte bebidas alcoólicas?</p>
+                <div class="mb-2"><!--Regulando margin -->
+                    <input type="radio" class="btn-check" name="perg3" id="resp1"><!--Inicializando radio -->
+                    <label class="btn btn-secondary btn-perg col-12 text-start" for="resp1">Gosto muito.</label><!--col-md-12 para o botão ficar do tamanho da div que ele se encontra-->
+                </div>
+                <div class="mb-2">
+                    <input type="radio" class="btn-check " name="perg3" id="resp2">
+                    <label class="btn btn-secondary btn-perg col-12 text-start" for="resp2">Gosto.</label>
+                </div>
+                <div class="mb-2">
+                    <input type="radio" class="btn-check" name="perg3" id="resp3">
+                    <label class="btn btn-secondary btn-perg col-12 text-start" for="resp3">Apenas bebo socialmente.</label>
+                </div>
+                <div class="mb-2">
+                    <input type="radio" class="btn-check" name="perg3" id="resp4">
+                    <label class="btn btn-secondary btn-perg col-12 text-start" for="resp4">Quase nunca bebo.</label>
+                </div>
+                <div class="">
+                    <input type="radio" class="btn-check " name="perg3" id="resp5">
+                    <label class="btn btn-secondary btn-perg col-12 text-start" for="resp5">Nunca bebo.</label>
+                </div>
+            </div>
+        </div>
+
+        <!--AREA DOS BOTOES -->
+
+        <div class="container">
+        <div class="row"><!--Criando uma nova linha -->
+            <div class="col-lg-2 col-md-1"></div><!-- Descartando 2 colunas para conseguir o alinhamento que desejo -->
+                <div class="col-lg-8 col-md-10 btn-alin ">
+                    <a href='pergunta2.html' class="btn btn-primary">Anterior</a><!--Botao que apenas volta para a ultima pergunta -->
+                    <a href='pergunta4.html' class="btn btn-primary" id="resposta3" >Próximo</a><!--Botão que irá salvar a resposta e avançar para proxima pergunta-->
+                </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <!--FOOTER -->
+    <footer class="footer bg-light text-muted mt-auto">
+		<div class="container text-center small">
+			<div class="row">
+				<span class="my-2">Website de fins educacionais, elaborado para a disciplina de Linguagens de Programação da FGV/EMAp.</span>
+			</div>
+		</div>
+	</footer>
+
+
+</body>
+</html>

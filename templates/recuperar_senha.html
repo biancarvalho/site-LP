@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Recuperar senha</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/css/custom.css" />
+	  <!-- Bootstrap Javascript -->
+	<script src="../static/bootstrap/dist/js/bootstrap.js" defer></script>
+</head>
+<body class="bg-secondary font-family d-flex flex-column min-vh-100">
+<!-- Barra de navegação criada a partir do Bootstrap 5 -->
+    <nav class="navbar navbar-expand navbar-dark bg-primary">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">
+				<img src="../static/img/logo.png" alt="logo do site" width="30" height="30">
+			</a>
+			<a class="navbar-brand" href="#"></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			<li class="nav-item">
+                <a class="nav-link" href="/login.html">Login</a>
+			</li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/cadastro.html">Cadastrar</a>
+              </li>
+		  </ul>
+		</div>
+		</div>
+	</nav>
+
+    <!--Section Recuperar Senha-->
+        <div class="container container-table position-relative mb-3">
+            <div class="row mx-auto mt-4">
+                <div class="col-md-4 bg-white text-center">
+                    <img class="img-fluid m-3" alt="imagem ilustrativa de senha" src="../static/img/forgot-password.png">
+                </div>
+                <div class="col-md-8 bg-white">
+                    <div class="container mt-5">
+                        <div class="position-relative p-2">
+                            <div class="text-center mt-2 p-2">
+                                <h2>Esqueceu a senha?</h2>
+                            </div>
+                        </div>
+                        <div class="container bg-white position-relative p-3 mb-3">
+                            <form>
+                                <label for="input-recuperar-senha">Insira seu email</label>
+                                <input class="form-control mt-1" id="input-recuperar-senha" type="text" placeholder="Insira seu email" />
+                            </form>
+                            <div class="text-center m-2 p-1">
+                                <a href="login.html" class="btn btn-primary">Enviar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+    <footer class="footer bg-light text-muted mt-auto">
+		<div class="container text-center small">
+			<div class="row">
+				<span class="my-2">Website de fins educacionais, elaborado para a disciplina de Linguagens de Programação da FGV/EMAp.</span>
+			</div>
+		</div>
+	</footer>
+
+    </body>
+</html>
