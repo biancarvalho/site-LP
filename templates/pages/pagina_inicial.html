@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="../../static/css/custom.css" /> <!--Mapeia o .css que é output do boostrap.scss-->
+	<!-- Bootstrap Javascript -->
+	<script src="../../static/bootstrap/dist/js/bootstrap.js" defer></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1" /> <!--Ajusta para a tela ficar responsiva ao device utilizado. Initial-scale evita zoom out infinito ao abrir tela em um novo device.-->
+    <title>Página Inicial</title>
+
+</head>
+<body class="bg-secondary font-family d-flex flex-column min-vh-100">
+<!-- Barra de navegação criada a partir do Bootstrap 5 -->
+    <nav class="navbar navbar-expand navbar-dark bg-primary">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">
+				<img src="../../static/img/logo.png" alt="logo do site" width="30" height="30">
+			</a>
+			<a class="navbar-brand" href="#"></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			<li class="nav-item">
+			  <a class="nav-link active" aria-current="page" href="/pagina_inicial.html">Página Inicial</a>
+			</li>
+			  <li class="nav-item">
+			  <a class="nav-link" href="/chat.html">Chat</a>
+			</li>
+			  <li class="nav-item">
+			  <a class="nav-link" href="/ranking.html">Ranking</a>
+			</li>
+			<li class="nav-item dropdown">
+			  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				Configurações
+			  </a>
+			  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+				<li><a class="dropdown-item" href="/mudar_email.html">Mudar e-mail</a></li>
+				<li><a class="dropdown-item" href="/mudar_senha.html">Mudar senha</a></li>
+				<li><a class="dropdown-item" href="/login.html">Sair</a></li>
+			  </ul>
+			</li>
+		  </ul>
+		</div>
+		</div>
+	</nav>
+<!-- Conteúdo -->
+		<div class="container mb-3">
+			<div class="col-md-12 row bg-secondary mt-4">
+				<!-- Criando título com o nome do site e colocando a logo -->
+
+				<div class="col-md-8 bg-secondary text-center">
+					<div class="row-md-12">
+						<div class="row-md-4">
+						<strong class="text-center text-dark my-auto display-1">TINDEMAP</strong>
+						</div>
+						<div class="row-md-8 mt-5">
+						<img src="../../static/img/logo.gif" alt="gif com a logo do site com imagens de brilho piscando ao redor" class="image-responsive" width=300 height=300>
+						</div>
+					</div>
+				</div>
+
+<!-- Criando os botões para as notificações -->
+				<div class="col-md-4">
+					<a class='col-md-12 mt-4 text-white btn btn-success' href='/chat.html' role="button">Você tem uma nova mensagem</a>
+					<a class='col-md-12 mt-4 text-white btn btn-success' href='/ranking.html' role="button">Entrou uma nova pessoa no seu ranking</a>
+					<a class='col-md-12 mt-4 text-white btn btn-success' href='/chat.html' role="button">Você tem uma nova mensagem</a>
+					<a class='col-md-12 mt-4 text-white btn btn-success' href='/ranking.html' role="button">Entrou uma nova pessoa no seu ranking</a>
+					<a class='col-md-12 mt-4 text-white btn btn-success' href='/chat.html' role="button">Você tem uma nova mensagem</a>
+					<a class='col-md-12 mt-4 text-white btn btn-success' href='/chat.html' role="button">Você tem uma nova mensagem</a>
+					<a class='col-md-12 mt-4 text-white btn btn-success' href='/ranking.html' role="button">Entrou uma nova pessoa no seu ranking</a>
+					<a class='col-md-12 mt-4 text-white btn btn-success' href='/chat.html' role="button">Você tem uma nova mensagem</a>
+				</div>
+			</div>
+		</div>
+    <footer class="footer bg-light text-muted mt-auto">
+		<div class="container text-center small">
+			<div class="row">
+				<span class="my-2">Website de fins educacionais, elaborado para a disciplina de Linguagens de Programação da FGV/EMAp.</span>
+			</div>
+		</div>
+	</footer>
+
+
+
+</body>
+</html>

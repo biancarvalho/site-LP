@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block cabecalho %}
+                <title>TINDEMAP</title>
+        {% endblock %}
+        {% block estilo %}
+                <meta charset="utf-8"/>
+	            <!-- Bootstrap CSS -->
+	            <link rel="stylesheet" type="text/css" href="../../static/css/custom.css" /> <!--Mapeia o .css que é output do boostrap.scss-->
+	            <!-- Bootstrap Javascript -->
+	            <script src="../../static/bootstrap/dist/js/bootstrap.js" defer></script>
+	            <meta name="viewport" content="width=device-width, initial-scale=1" /> <!--Ajusta para a tela ficar responsiva ao device utilizado. Initial-scale evita zoom out infinito ao abrir tela em um novo device.-->
+        {% endblock %}
+    </head>
+    <body>
+        {% block conteudo %}
+            <p>Conteúdo Padrão</p>
+        {% endblock %}
+        {% include 'rodape.html' %}
+    </body>
+</html>
