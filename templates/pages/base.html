@@ -14,9 +14,71 @@
         {% endblock %}
     </head>
     <body>
+        {% block barra_navegacao_login %}
+        <nav class="navbar navbar-expand navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="../../static/img/logo.png" alt="logo do site" width="30" height="30">
+                </a>
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/login.html">Login</a>
+                </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/cadastro.html">Cadastrar</a>
+                  </li>
+              </ul>
+            </div>
+            </div>
+        </nav>
+        {% endblock %}
+
+        {% block barra_navegacao_site %}
+        <nav class="navbar navbar-expand navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="../../static/img/logo.png" alt="logo do site" width="30" height="30">
+                </a>
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="/pagina_inicial.html">Página Inicial</a>
+                </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="/chat.html">Chat</a>
+                </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="/ranking.html">Ranking</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                  aria-current="page" >
+                    Configurações
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="/mudar_email.html">Mudar e-mail</a></li>
+                    <li><a class="dropdown-item" href="/mudar_senha.html">Mudar senha</a></li>
+                    <li><a class="dropdown-item" href="/login.html">Sair</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            </div>
+        </nav>
+        {% endblock %}
+
         {% block conteudo %}
             <p>Conteúdo Padrão</p>
         {% endblock %}
-        {% include 'rodape.html' %}
+        {% include 'pages/rodape.html' %}
     </body>
 </html>

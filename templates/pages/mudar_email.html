@@ -1,56 +1,15 @@
-{% extends 'base.html'%}
+{% extends 'pages/base.html'%}
 {% load static %}
 
-{% block cabecalho %}
-    <title>Exemplo</title>
+{% block barra_navegacao_login %}
 {% endblock %}
 
-{% block estilo %}
-    <link rel="stylesheet" type="text/css" href="{% static 'fgv/estilos.css' %}">
-{% endblock %}
-
-<!-- Barra de navegação criada a partir do Bootstrap 5 -->
-    <nav class="navbar navbar-expand navbar-dark bg-primary">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#">
-				<img src="../../static/img/logo.png" alt="logo do site" width="30" height="30">
-			</a>
-			<a class="navbar-brand" href="#"></a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			  <span class="navbar-toggler-icon"></span>
-			</button>
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-			<li class="nav-item">
-			  <a class="nav-link" href="/pagina_inicial.html">Página Inicial</a>
-			</li>
-			  <li class="nav-item">
-			  <a class="nav-link" href="/chat.html">Chat</a>
-			</li>
-			  <li class="nav-item">
-			  <a class="nav-link" href="/ranking.html">Ranking</a>
-			</li>
-			<li class="nav-item dropdown">
-			  <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-              aria-current="page" >
-				Configurações
-			  </a>
-			  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<li><a class="dropdown-item" href="/mudar_email.html">Mudar e-mail</a></li>
-				<li><a class="dropdown-item" href="/mudar_senha.html">Mudar senha</a></li>
-				<li><a class="dropdown-item" href="/login.html">Sair</a></li>
-			  </ul>
-			</li>
-		  </ul>
-		</div>
-		</div>
-	</nav>
-
-    <!--Section Mudar Senha-->
+{% block conteudo %}
+    <!--Section Mudar Email-->
         <div class="container container-table position-relative mb-3">
             <div class="row mx-auto mt-4">
                 <div class="col-md-4 bg-white text-center">
-                    <img class="img-fluid m-3" alt="imagem ilustrativa de senha" src="../../static/img/e-mail.png">
+                    <img class="img-fluid m-3" alt="imagem ilustrativa de email" src="../../static/img/e-mail.png">
                 </div>
                 <div class="col-md-8 bg-white">
                     <div class="container mt-5">
@@ -77,14 +36,4 @@
                 </div>
                 </div>
             </div>
-
-    <footer class="footer bg-light text-muted mt-auto">
-		<div class="container text-center small">
-			<div class="row">
-				<span class="my-2">Website de fins educacionais, elaborado para a disciplina de Linguagens de Programação da FGV/EMAp.</span>
-			</div>
-		</div>
-	</footer>
-
-</body>
-</html>
+{% endblock %}			
