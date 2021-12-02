@@ -2,7 +2,7 @@ from django.urls import path
 from pages import views as views
 
 urlpatterns=[
-    path('pergunta<int:param>.html', views.perguntas, name='pergunta'),
+    path('pergunta/<int:param>/', views.perguntas, name='pergunta'),
     path('pagina_inicial.html', views.index, name='pagina-inicial'),
     path('', views.login, name='index'),
     path('login.html', views.login, name='login'),
