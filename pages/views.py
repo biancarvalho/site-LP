@@ -18,7 +18,8 @@ def index(request):
     return render(request, 'pages/pagina_inicial.html')  
 
 def cadastrar(request):
-    return render(request, 'pages/cadastro.html')
+    context = {'pergunta':  'pergunta'}
+    return render(request, 'pages/cadastro.html', context=context)
 
 def login(request):
     return render(request, 'pages/login.html')    
