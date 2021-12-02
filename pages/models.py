@@ -12,3 +12,15 @@ class Aluno(models.Model):
     curso = models.CharField(max_length=80)
     periodo = models.IntegerField()
     interesses = models.ManyToManyField(Interesses, null=True)    
+
+class Perguntas(models.Model):
+    slug = models.SlugField(max_length=255,unique=True)
+    pergunta = models.CharField(max_length=255)
+    alternativa1 = models.CharField(max_length=255)
+    alternativa2 = models.CharField(max_length=255)
+    alternativa3 = models.CharField(max_length=255)
+    alternativa4 = models.CharField(max_length=255)
+    alternativa5 = models.CharField(max_length=255)
+    
+    def __str__(self):
+        return self.slug

@@ -1,0 +1,93 @@
+{% extends 'pages/base.html'%}
+{% load static %}
+
+{% block cabecalho %}
+<title>Questionário|Tindemap</title>
+{% endblock %}
+{% block barra_navegacao_login %}
+<nav class="navbar navbar-expand navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="../../static/img/logo.png" alt="logo do site" width="30" height="30">
+        </a>
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+{% endblock %}
+
+{% block barra_navegacao_site%}
+{% endblock %}
+
+{% block conteudo %}
+<div class="perguntas mb-3"><!--Classe para orientar elementos especificos desse tipo de pagina -->
+
+    <!-- TEXTO INICIAL -->
+    
+    <h1 class="text-center display-1 mt-2">Questionário</h1>
+    <p class="text-center lead">Escolha a alternativa que mais te representa!</p>
+
+    <div class="container"><!--alinha conteudo -->
+
+    <!-- Formulario ainda não enviar os dados, vi diversas maneiras de como preparar a estrutura para isso, mas achei melhor implementar na hora que realmente será usado-->
+
+        <!--AREA DAS ALTERNATIVAS -->
+
+        <div class="row"><!--Uma divisão da pagina em uma "Linha" que tem 12 "colunas" -->
+
+            <div class="col-lg-2 col-md-1"></div><!--Descartando 3 "colunas" da linha para centralizar da forma que quero o conteudo -->
+
+            <div class="col-lg-8 col-md-10 bg-light pt-3 ps-3 pe-3 pb-3 mb-4 mt-2 br-1 rounded "><!--Usando 6 "colunas", colocando cor de fundo, regulando padding e margin  -->
+                <p class="h3 text-center mb-3">{{pergunta.pergunta}}</p>
+                <div class="mb-2"><!--Regulando margin -->
+                    <input type="radio" class="btn-check" name="perg" id="resp1" ><!--Inicializando radio -->
+                    <label class="btn btn-secondary btn-perg col-12 text-start" for="resp1">{{pergunta.alternativa1}}</label><!--col-md-12 para o botão ficar do tamanho da div que ele se encontra-->
+                </div>
+                <div class="mb-2">
+                    <input type="radio" class="btn-check " name="perg" id="resp2">
+                    <label class="btn btn-secondary btn-perg col-12 text-start" for="resp2">{{pergunta.alternativa2}}</label>
+                </div>
+                <div class="mb-2">
+                    <input type="radio" class="btn-check" name="perg" id="resp3" >
+                    <label class="btn btn-secondary btn-perg col-12 text-start" for="resp3">{{pergunta.alternativa3}}</label>
+                </div>
+                <div class="mb-2">
+                    <input type="radio" class="btn-check" name="perg" id="resp4">
+                    <label class="btn btn-secondary btn-perg col-12 text-start" for="resp4">{{pergunta.alternativa4}}</label>
+                </div>
+                <div class="">
+                    <input type="radio" class="btn-check " name="perg" id="resp5">
+                    <label class="btn btn-secondary btn-perg col-12 text-start" for="resp5">{{pergunta.alternativa5}}</label>
+                </div>
+            </div>
+        </div>
+
+        <!--AREA DOS BOTOES -->
+
+        <div class="container">
+        <div class="row"><!--Criando uma nova linha -->
+                    {% if atual == 1%}
+                    <div class="col-9"></div><!-- Descartando 2 colunas para conseguir o alinhamento que desejo -->
+                    <div class="col-3 btn-alin ">
+                        <a href="{% url 'pergunta' param=proximo%}" class="btn btn-primary" id="resposta" >Próximo</a><!--Botão que irá salvar a resposta e avançar para proxima pergunta-->
+                    </div>
+                   {% elif atual == 7%}
+                   <div class="col-lg-2 col-md-1"></div><!-- Descartando 2 colunas para conseguir o alinhamento que desejo -->
+                   <div class="col-lg-8 col-md-10 btn-alin ">
+                    <a href="{% url 'pergunta' param=anterior%}" class="btn btn-primary " >Anterior</a><!--Botao que apenas volta para a ultima pergunta -->
+                       <a href="{% url 'pagina-inicial' %}" class="btn btn-primary" id="resposta7" >Finalizar</a>
+                   </div>
+                  {% else %}
+                  <div class="col-lg-2 col-md-1"></div><!-- Descartando 2 colunas para conseguir o alinhamento que desejo -->
+                  <div class="col-lg-8 col-md-10 btn-alin ">
+                      <a href="{% url 'pergunta' param=anterior%}" class="btn btn-primary " >Anterior</a><!--Botao que apenas volta para a ultima pergunta -->
+                      <a href="{% url 'pergunta' param=proximo%}" class="btn btn-primary" id="resposta" >Próximo</a><!--Botão que irá salvar a resposta e avançar para proxima pergunta-->
+                  </div>
+                 {% endif %}  
+    </div>
+    </div>
+    </div>
+    </div>
+{% endblock %}
