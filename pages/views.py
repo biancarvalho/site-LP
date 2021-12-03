@@ -36,5 +36,12 @@ def ranking(request):
     return render(request, 'pages/ranking.html')
 
 def chat(request):
-    return render(request, 'pages/chat.html')  
+     list_animals = ['pavão', 'girafa', 'leão', 'camelo', 'impala', 'doninha', 'elefante', 'esquilo', 'flamingo', 'hiena', 'abelha']
+     list_contacts = []
+     context = {
+         'lista_imagens': list_animals
+         }
+
+     #}
+     return render(request, 'pages/chat.html',context=context)  
 
