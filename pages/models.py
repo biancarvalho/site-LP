@@ -11,7 +11,10 @@ class Aluno(models.Model):
     sexo = models.CharField(max_length=1)
     curso = models.CharField(max_length=80)
     periodo = models.IntegerField()
-    interesses = models.ManyToManyField(Interesses, null=True)    
+
+class Aluno_Interesses(models.Model):
+    aluno_id = models.ForeignKey(Aluno, on_delete=models.CASCADE)
+    interesses_id = models.ForeignKey(Interesses, on_delete=models.CASCADE)
 
 class Perguntas(models.Model):
     slug = models.SlugField(max_length=255,unique=True)
