@@ -46,3 +46,5 @@ def chat(request):
      #}
      return render(request, 'pages/chat.html',context=context)  
 
+def analises_bianca(request):
+    return render(request, 'bianca/analises.html')  
