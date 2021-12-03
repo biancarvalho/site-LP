@@ -1,53 +1,10 @@
-<!doctype html>
-<html lang="pt-br">
+{% extends 'pages/base.html'%}
+{% load static %}
 
-  <head>
-    <meta charset="utf-8">
-  	<title>Ranking</title>
+{% block barra_navegacao_login %}
+{% endblock %}
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="../../static/css/custom.css" />
-	  <!-- Bootstrap Javascript -->
-	<script src="../../static/bootstrap/dist/js/bootstrap.js" defer></script>
-  </head>
-
-<body class="bg-secondary font-family d-flex flex-column min-vh-100">
-<!-- Barra de navegação criada a partir do Bootstrap 5 -->
-    <nav class="navbar navbar-expand navbar-dark bg-primary">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#">
-				<img src="../../static/img/logo.png" alt="logo do site" width="30" height="30">
-			</a>
-			<a class="navbar-brand" href="#"></a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			  <span class="navbar-toggler-icon"></span>
-			</button>
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-			<li class="nav-item">
-			  <a class="nav-link" href="/pagina_inicial.html">Página Inicial</a>
-			</li>
-			  <li class="nav-item">
-			  <a class="nav-link" href="/chat.html">Chat</a>
-			</li>
-			  <li class="nav-item">
-			  <a class="nav-link active" aria-current="page" href="/ranking.html">Ranking</a>
-			</li>
-			<li class="nav-item dropdown">
-			  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-				Configurações
-			  </a>
-			  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<li><a class="dropdown-item" href="/mudar_email.html">Mudar e-mail</a></li>
-				<li><a class="dropdown-item" href="/mudar_senha.html">Mudar senha</a></li>
-				<li><a class="dropdown-item" href="/login.html">Sair</a></li>
-			  </ul>
-			</li>
-		  </ul>
-		</div>
-		</div>
-	</nav>
-
+{% block conteudo %}
 	<!-- Utilizando container a partir do Bootstrap 5  para escrever na página -->
 	<div class="container-fluid text-">
 		<p class="mt-4 text-center">Aqui estão as pessoas que deram match com você. Não perca tempo, o link para o chat está logo ali embaixo! ;) </p>
@@ -136,15 +93,4 @@
 	</div>
 	</div>
 
-
-	<footer class="footer bg-light text-muted mt-auto">
-		<div class="container text-center small">
-			<div class="row">
-				<span class="my-2">Website de fins educacionais, elaborado para a disciplina de Linguagens de Programação da FGV/EMAp.</span>
-			</div>
-		</div>
-	</footer>
-
-
-  </body>
-</html>
+{% endblock %}
