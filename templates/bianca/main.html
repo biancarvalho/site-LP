@@ -17,10 +17,15 @@
         {{interesses_head |safe}}
         <h3 style="text-align:center">Tabela fundida</h3>
         {{df | safe}}
+        <p> Assim, separamos os dados em dois dataframes diferentes, um com os dados de pessoas do sexo feminino e outro com os dados de pessoas do sexo masculino: </p>
         <h3 style="text-align:center">Tabela: sexo feminino e alto grau de interesse</h3>
         {{df_f | safe}}
         <h3 style="text-align:center">Tabela: sexo masculino e alto grau de interesse</h3>
         {{df_m | safe}}
+        <p> Por fim, fizemos visualizações simples sobre cada dataframe para ver, de forma organizada, como variam os interesses de acordo com o sexo: </p>
+        <img src="data:image/png;base64,{{ grafico_m |safe }}">
+        <img src="data:image/png;base64,{{ grafico_f |safe }}">
+        <h3 style="text-align:center">Conclusão</h3>
+        <p>Conseguimos, assim, ver a diferença entre o grau de interesse em cada atividade. Percebemos que as mulheres, de forma geral, têm mais interresse em músicas e literatura, enquanto os homens têm mais interesse em esportes e atividades que possuem contato com a natureza.</p>
 
-        <img src="data:image/png;base64,{{ graphic|safe }}">
 {% endblock %}
