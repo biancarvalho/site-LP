@@ -1,0 +1,146 @@
+{% extends '../pages/base.html'%}
+{% load static %}
+
+{% block barra_navegacao_login %}
+{% endblock %}
+
+{% block conteudo %}
+<h1> Análise Exploratória de Dados </h1>
+<h3> Cristiano Júnior Larréa Leal <br> </br> </h3>
+
+<p> Essa análise exploratória de dados tem o objetivo de responder a seguinte pergunta: </p>
+<h4> <b> Qual porcentagem dos alunos parecem ter hábitos de vida saudáveis? </b></h4>
+
+<p> Para tanto, vamos iniciar analisando quando tipos diferentes de interesses possuímos: </p>
+{% for interesse in interesses_distinct %}
+<li>
+    {{interesse.nome}}
+</li>    
+{% endfor %}
+
+<p> Agora, filtramos aqueles que podem ser considerados "coisas saudáveis", que, analisando são: </p>
+{% for interesse in interesses_distinct %}
+{% if interesse.nome in interesses_saudaveis %}
+<li> 
+    {{interesse.nome}}
+</li>
+{% endif %}
+{% endfor %}    
+
+<p> Agora, devemos achar a quantidade de alunos que possuam esses interesses com grau alto (>=3). Essa será nossa definição de "alunos com hábitos saudáveis". </p>
+<p> Para isso, com pandas, criamos um dataframe de Alunos. Após, damos um merge com um dataframe de Interesses_Alunos (tabela intermediária) do banco de dados. Ao final, realizamos mais um merge com a tabela de interesses e, por fim, apenas devemos filtrar. </p>
+<p> Abaixo, temos os dois dataframes (Alunos e Interesses, restringidos a 20 registros) e, ao final, o dataframe de merge (também restringido a 20).
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>sexo</th>
+        <th>Curso</th>
+        <th>Periodo</th>
+      </tr>
+    </thead>
+    <tbody>  
+    {% for aluno in alunos %}
+      <tr>
+        <td>{{aluno.nome}}</td>
+        <td>{{aluno.sexo}}</td>
+        <td>{{aluno.idade}}</td>
+        <td>{{aluno.curso}}</td>
+        <td>{{aluno.periodo}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<br></br>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Grau</th>
+        <th>Categoria</th>
+      </tr>
+    </thead>
+    <tbody>  
+    {% for interesse in interesses %}
+      <tr>
+        <td>{{interesse.nome}}</td>
+        <td>{{interesse.grau}}</td>
+        <td>{{interesse.categoria}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<h4> Dataframe de merge </h4>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th>Sexo</th>
+      <th>Curso</th>
+      <th>Período</th>
+      <th>Nome do Interesse</th>
+      <th>Categoria</th>
+      <th>Grau</th>
+    </tr>
+  </thead>
+  <tbody>  
+  {% for aluno in aluno_interesses_df %}
+    <tr>
+      <td>{{aluno.1}}</td>
+      <td>{{aluno.3}}</td>
+      <td>{{aluno.2}}</td>
+      <td>{{aluno.4}}</td>
+      <td>{{aluno.5}}</td>
+      <td>{{aluno.12}}</td>
+      <td>{{aluno.10}}</td>
+      <td>{{aluno.11}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<br> </br>
+<p> Agora, filtramos todos os registros que contenham apenas os interesses ditos ali em cima e que o grau seja maior que 3.
+<br></br>
+<h4> Dataframe Filtrado</h4>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th>Sexo</th>
+      <th>Curso</th>
+      <th>Período</th>
+      <th>Nome do Interesse</th>
+      <th>Categoria</th>
+      <th>Grau</th>
+    </tr>
+  </thead>
+  <tbody>  
+  {% for aluno in df_filtrado %}
+    <tr>
+      <td>{{aluno.1}}</td>
+      <td>{{aluno.3}}</td>
+      <td>{{aluno.2}}</td>
+      <td>{{aluno.4}}</td>
+      <td>{{aluno.5}}</td>
+      <td>{{aluno.12}}</td>
+      <td>{{aluno.11}}</td>
+      <td>{{aluno.10}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<br> </br>
+
+<p> Por fim, como ambas as tabelas podem ter mais de um aluno com diferentes interesses, fazemos um .unique() por aluno e comparamos o tamanho desse com o .unique do dataframe original, para calcular a porcentagem.
+<p> Tamanho do DataFrame filtrado: {{tamanho_filtrado}} </p>
+<p> Tamanho do DataFrame original: {{tamanho_original}} </p>
+<p> E, assim, </p>
+<h4> A porcentagem de alunos que parecem ter hábitos de vida saudáveis é {{porcentagem}}%. </h4>
+{% endblock %}
