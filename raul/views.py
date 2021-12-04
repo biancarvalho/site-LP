@@ -76,4 +76,4 @@ def analise_raul(request):
 
         
     }
-    return render(request, 'raul/analise_raul.html', context=context)
+    return render(request, 'raul/main.html', context=context)

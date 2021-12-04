@@ -47,4 +47,4 @@ def eda(request):
         'tamanho_original': len(unique_original),
         'porcentagem': round(porcentagem, 2)
     }
-    return render(request, 'cristiano/eda.html', context=context)
+    return render(request, 'cristiano/main.html', context=context)

@@ -57,4 +57,4 @@ def analises_bianca(request):
         'df_m': df_m,
         'graphic': graphic,
     }
-    return render(request, 'bianca/analises.html', context=context)
+    return render(request, 'bianca/main.html', context=context)
