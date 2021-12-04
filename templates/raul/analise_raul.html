@@ -1,0 +1,35 @@
+{% extends '../pages/base.html'%}
+{% load static %}
+
+{% block barra_navegacao_login %}
+{% endblock %}
+
+{% block conteudo %}
+
+<h1 class="text-center display-4 mt-2"> Análise Exploratória de Dados </h1>
+<h4 class="text-center"> Raul Lomonte Figueiredo </h4> <br><br>
+
+<p> Essa análise exploratória de dados tem o objetivo de responder a seguinte pergunta: </p>
+<h4> <b> Como variam os interesses conforme as idades? </b></h4>
+
+<p> Incialmente, vamos ver como são os dados que temos: </p>
+<h3>Tabela de informação dos alunos </h3>
+{{alunos_head |safe}}
+<br>
+<h3>Tabela dos interesses </h3>
+{{interesses_head |safe}}
+
+
+Agora iremos juntas as duas tabelas atravez de uma terceira, onde temos os registro de quais categorias e quais graus os alunos votaram.
+
+{{merge_inicial | safe}}
+
+Agora vamos pegar apenas as colunas que nos importam:
+
+{{merge_limpo|safe}}
+
+
+
+
+
+{% endblock %}
