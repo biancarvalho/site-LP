@@ -1,0 +1,17 @@
+{% extends '../pages/base.html'%}
+{% load static %}
+
+{% block barra_navegacao_login %}
+{% endblock %}
+
+{% block conteudo %}
+
+{% for interesse in interesses_distintos %}
+<li>
+    {{interesse.nome}}
+</li>    
+{% endfor %}
+
+<img src="data:image/png;base64,{{ graphic|safe }}">
+
+{% endblock %}
