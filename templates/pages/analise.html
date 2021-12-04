@@ -48,7 +48,12 @@
         {% endblock %}
 
 
-
-{% block conteudo %}
-{% endblock %}
+<body class="bg-secondary">
+<div class='d-flex my-4'>
+    <div class='container col-md-9 col-sm-11'>
+    {% block conteudo %}
+    {% endblock %}
+    </div>
+</div>
 {% include 'pages/rodape.html' %}
+</body>
