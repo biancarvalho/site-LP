@@ -15,5 +15,21 @@
 
         <p>Essa análise exploratória de dados tem o objetivo de responder a seguinte pergunta:</p>
         <h4 style="text-align:center">Como variam os interesses conforme as idades?</b></h4>   
+
+        <p> Inicialmente, vamos ver como são os dados que temos: </p>
+        <h3 style="text-align:center">Tabela de informação dos alunos </h3>
+        {{alunos_head |safe}}
+        <br>
+        <h3 style="text-align:center">Tabela dos interesses </h3>
+        {{interesses_head |safe}}
+        <h3 style="text-align:center">Tabela fundida</h3>
+        {{df | safe}}
+        <h3 style="text-align:center">Tabela: sexo feminino e alto grau de interesse</h3>
+        {{df_f | safe}}
+        <h3 style="text-align:center">Tabela: sexo masculino e alto grau de interesse</h3>
+        {{df_m | safe}}
+
+        <img src="data:image/png;base64,{{ graphic|safe }}">
+
     </body>
 {% endblock %}

@@ -11,6 +11,5 @@ urlpatterns=[
     path('mudar_email.html', views.mudar_email, name='mudar-email'),
     path('mudar_senha.html', views.mudar_senha, name='mudar-senha'),
     path('ranking.html', views.ranking, name='ranking'),
-    path('chat.html', views.chat, name='chat'),
-    path('bianca/analises.html', views.analises_bianca, name='analises_bianca')
+    path('chat.html', views.chat, name='chat')
 ]
