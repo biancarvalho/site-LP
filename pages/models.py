@@ -27,3 +27,14 @@ class Perguntas(models.Model):
     
     def __str__(self):
         return self.slug
+
+
+class ranking(models.Model): 
+
+    nome = models.CharField(max_length=80)
+    imagem = models.CharField(max_length=80)
+    texto = models.TextField()
+    porc = models.IntegerField()
+
+    def __str__(self):
+        return self.imagem

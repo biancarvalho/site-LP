@@ -1,6 +1,6 @@
 from django.http.response import HttpResponseNotFound
 from django.shortcuts import redirect, render
-from pages.models import Perguntas
+from pages.models import Perguntas,ranking
 from django.urls import reverse
 
 def perguntas(request, param):
@@ -33,8 +33,12 @@ def mudar_email(request):
 def mudar_senha(request):
     return render(request, 'pages/mudar_senha.html')    
 
-def ranking(request):
-    return render(request, 'pages/ranking.html')
+def rankings(request):
+    lista = ranking.objects.all()
+    context = {
+        'lista_ranking' : lista,
+    }
+    return render(request, 'pages/ranking.html',context)
 
 def chat(request):
      list_animals = ['pavão', 'girafa', 'leão', 'camelo', 'impala', 'doninha', 'elefante', 'esquilo', 'flamingo', 'hiena', 'abelha']

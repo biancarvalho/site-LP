@@ -1,95 +1,42 @@
 {% extends 'pages/base.html'%}
 {% load static %}
 
+
+
 {% block barra_navegacao_login %}
 {% endblock %}
 
 {% block conteudo %}
-	<!-- Utilizando container a partir do Bootstrap 5  para escrever na página -->
-	<div class="container-fluid text-">
-		<p class="mt-4 text-center">Aqui estão as pessoas que deram match com você. Não perca tempo, o link para o chat está logo ali embaixo! ;) </p>
+
+
+<!-- Utilizando container a partir do Bootstrap 5  para escrever na página -->
+<div class="container-fluid text-">
+	<p class="mt-4 text-center">Aqui estão as pessoas que deram match com você. Não perca tempo, o link para o chat está logo ali embaixo! ;) </p>
+</div>
+
+<!-- Grid de cards feita a partir do Bootstrap 5 -->
+<div class="container mb-3" id="ranking-cards">
+	<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+
+{% for animal in lista_ranking%}
+  <div class="col">
+	<div class="card h-80">
+	  <img src="../../static/img/{{animal}}.jpg" class="card-img-top"  alt="imagem de um {{animal}}">
+	  <div class="card-body">
+		<h5 class="card-title">{{animal.nome}}</h5>
+		<p class="card-text">{{animal.texto}}</p>
+		  <div class="progress">
+		  <div class="progress-bar" role="progressbar" style="width: {{animal.porc}}" aria-valuenow="{{animal.porc}}" aria-valuemin="0" aria-valuemax="100">{{animal.porc}}%</div>
+		</div>
+		  <div class="d-grid gap-2">
+			  <a href="chat.html" class="btn btn-primary mt-3">Conversar</a>
+		  </div>
+	  </div>
 	</div>
+  </div>
+{% endfor%}
 
-	<!-- Grid de cards feita a partir do Bootstrap 5 -->
-	<div class="container mb-3" id="ranking-cards">
-		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-	  <div class="col">
-		<div class="card h-80">
-		  <img src="../../static/img/elefante.jpg" class="card-img-top"  alt="imagem de um elefante">
-		  <div class="card-body">
-			<h5 class="card-title">Elefante Sorridente</h5>
-			<p class="card-text">Você e Elefante Sorridente tem como gostos comuns Star Wars e vôlei de praia. Chama na DM!</p>
-		  	<div class="progress">
-			  <div class="progress-bar" role="progressbar" style="width: 93%" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100">93%</div>
-			</div>
-			  <div class="d-grid gap-2">
-				  <a href="chat.html" class="btn btn-primary mt-3">Conversar</a>
-			  </div>
-		  </div>
-		</div>
-	  </div>
-	  <div class="col">
-		<div class="card h-80">
-		  <img src="../../static/img/ovelha.jpg" class="card-img-top" alt="imagem de uma ovelha">
-		  <div class="card-body">
-			<h5 class="card-title">Ovelha Feliz</h5>
-			<p class="card-text">Você e Ovelha Feliz possuem interesse em música indie e culinária alemã. Conversem sobre!</p>
-			  <div class="progress">
-				  <div class="progress-bar" role="progressbar" style="width: 84%" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100">84%</div>
-			  </div>
-			  <div class="d-grid gap-2">
-				  <a href="chat.html" class="btn btn-primary mt-3">Conversar</a>
-			  </div>
 
-		  </div>
-
-		</div>
-	  </div>
-	  <div class="col">
-		<div class="card h-80">
-		  <img src="../../static/img/leão.jpg" class="card-img-top" alt="imagem de um leão">
-		  <div class="card-body">
-			<h5 class="card-title">Lontra Intrigada</h5>
-			<p class="card-text">Você e Leão Intrigado possuem interesse em cultura oriental e aulas de iô-iô. Conversem sobre!</p>
-			  <div class="progress">
-				  <div class="progress-bar" role="progressbar" style="width: 77%" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100">77%</div>
-			  </div>
-			  <div class="d-grid gap-2">
-				  <a href="chat.html" class="btn btn-primary mt-3">Conversar</a>
-			  </div>
-		  </div>
-		</div>
-	  </div>
-	  <div class="col">
-		<div class="card h-80">
-		  <img src="../../static/img/girafa.jpg" class="card-img-top" alt="imagem de uma girafa">
-		  <div class="card-body">
-			<h5 class="card-title">Girafa Esquecida</h5>
-			<p class="card-text">Você e Girafa Esquecida possuem interesse em cultura oriental e aulas de iô-iô. Conversem sobre!</p>
-			  <div class="progress">
-				  <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">72%</div>
-			  </div>
-			  <div class="d-grid gap-2">
-				  <a href="chat.html" class="btn btn-primary mt-3">Conversar</a>
-			  </div>
-		  </div>
-		</div>
-	  </div>
-	  <div class="col">
-		<div class="card h-80">
-		  <img src="../../static/img/flamingo.jpg" class="card-img-top" alt="imagem de um flamingo">
-		  <div class="card-body">
-			<h5 class="card-title">Jaguar Surpreso</h5>
-			<p class="card-text">Você e Flamingo Surpreso gostam de anime e política lituana. Vem de chat, bb!</p>
-			  <div class="progress">
-				  <div class="progress-bar" role="progressbar" style="width: 67%" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100">67%</div>
-			  </div>
-			  <div class="d-grid gap-2">
-				  <a href="chat.html" class="btn btn-primary mt-3">Conversar</a>
-			  </div>
-		  </div>
-		</div>
-	  </div>
 	</div>
 	</div>
 
