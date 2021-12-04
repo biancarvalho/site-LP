@@ -94,11 +94,11 @@ plt.legend().remove()
 buffer = BytesIO()
 plt.savefig(buffer, format='png')
 buffer.seek(0)
-image_png = buffer.getvalue()
+image_png1 = buffer.getvalue()
 buffer.close()
 
-graphic = base64.b64encode(image_png)
-de15_23_graphic = graphic.decode('utf-8')
+de15_23_graphic = base64.b64encode(image_png1)
+de15_23_graphic = de15_23_graphic.decode('utf-8')
 
 #grafico 24 a 32
 de24_32= de24_32.sort_values('grau')
@@ -126,11 +126,11 @@ plt.legend().remove()
 buffer = BytesIO()
 plt.savefig(buffer, format='png')
 buffer.seek(0)
-image_png = buffer.getvalue()
+image_png2 = buffer.getvalue()
 buffer.close()
 
-graphic = base64.b64encode(image_png)
-de24_32_graphic = graphic.decode('utf-8')
+de24_32_graphic = base64.b64encode(image_png2)
+de24_32_graphic = de24_32_graphic.decode('utf-8')
 
 #grafico 33 a 41
 de33_41= de33_41.sort_values('grau')
@@ -158,11 +158,11 @@ plt.legend().remove()
 buffer = BytesIO()
 plt.savefig(buffer, format='png')
 buffer.seek(0)
-image_png = buffer.getvalue()
+image_png3 = buffer.getvalue()
 buffer.close()
 
-graphic = base64.b64encode(image_png)
-de33_41_graphic = graphic.decode('utf-8')
+de33_41_graphic = base64.b64encode(image_png3)
+de33_41_graphic = de33_41_graphic.decode('utf-8')
 
 #grafico 42 a 50
 de42_50= de42_50.sort_values('grau')
@@ -190,11 +190,11 @@ plt.legend().remove()
 buffer = BytesIO()
 plt.savefig(buffer, format='png')
 buffer.seek(0)
-image_png = buffer.getvalue()
+image_png4 = buffer.getvalue()
 buffer.close()
 
-graphic = base64.b64encode(image_png)
-de42_50_graphic = graphic.decode('utf-8')
+de42_50_graphic = base64.b64encode(image_png4)
+de42_50_graphic = de42_50_graphic.decode('utf-8')
 
 
 def analise_raul(request):

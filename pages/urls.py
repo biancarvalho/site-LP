@@ -10,6 +10,6 @@ urlpatterns=[
     path('recuperar_senha.html', views.recuperar_senha, name='recuperar-senha'),
     path('mudar_email.html', views.mudar_email, name='mudar-email'),
     path('mudar_senha.html', views.mudar_senha, name='mudar-senha'),
-    path('ranking.html', views.ranking, name='ranking'),
+    path('ranking.html', views.rankings, name='ranking'),
     path('chat.html', views.chat, name='chat')
 ]
