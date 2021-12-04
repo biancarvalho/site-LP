@@ -3,6 +3,11 @@ import pandas as pd
 from pages.models import Aluno, Interesses, Aluno_Interesses
 import re
 
+from io import BytesIO
+import base64
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
 
 
 alunos = Aluno.objects.all().values()
@@ -51,28 +56,162 @@ de42_50=de42_50.groupby(['nome_interesse']).mean().sort_values(['grau'],ascendin
 de42_50=de42_50.drop(columns=['idade'])
 
 # Preparando dataframes que serão mostrados.
-alunos_head = html_updated = re.sub("class=\"dataframe ", "class=\"", alunos.head(5).to_html(classes='table table-striped',justify='left'))
-interesses_head = html_updated = re.sub("class=\"dataframe ", "class=\"", interesses.head(5).to_html(classes='table table-striped',justify='left'))
-merge_limpo = html_updated = re.sub("class=\"dataframe ", "class=\"", merge_limpo.head(5).to_html(classes='table table-striped',justify='left'))
-merge_inicial = html_updated = re.sub("class=\"dataframe ", "class=\"", merge_inicial.head(5).to_html(classes='table table-striped',justify='left'))
-tabela_idade = html_updated = re.sub("class=\"dataframe ", "class=\"", tabela_idade.head(30).to_html(classes='table table-striped',justify='left'))
-de15_23 = html_updated = re.sub("class=\"dataframe ", "class=\"", de15_23.head(5).to_html(classes='table table-striped',justify='left'))
-de24_32 = html_updated = re.sub("class=\"dataframe ", "class=\"", de24_32.head(5).to_html(classes='table table-striped',justify='left'))
-de33_41 = html_updated = re.sub("class=\"dataframe ", "class=\"", de33_41.head(5).to_html(classes='table table-striped',justify='left'))
-de42_50 = html_updated = re.sub("class=\"dataframe ", "class=\"", de42_50.head(5).to_html(classes='table table-striped',justify='left'))
+alunos_head_html = html_updated = re.sub("class=\"dataframe ", "class=\"", alunos.head(5).to_html(classes='table table-striped',justify='left'))
+interesses_head_html = html_updated = re.sub("class=\"dataframe ", "class=\"", interesses.head(5).to_html(classes='table table-striped',justify='left'))
+merge_limpo_html = html_updated = re.sub("class=\"dataframe ", "class=\"", merge_limpo.head(5).to_html(classes='table table-striped',justify='left'))
+merge_inicial_html = html_updated = re.sub("class=\"dataframe ", "class=\"", merge_inicial.head(5).to_html(classes='table table-striped',justify='left'))
+tabela_idade_html = html_updated = re.sub("class=\"dataframe ", "class=\"", tabela_idade.head(30).to_html(classes='table table-striped',justify='left'))
+de15_23_html = html_updated = re.sub("class=\"dataframe ", "class=\"", de15_23.head(5).to_html(classes='table table-striped',justify='left'))
+de24_32_html = html_updated = re.sub("class=\"dataframe ", "class=\"", de24_32.head(5).to_html(classes='table table-striped',justify='left'))
+de33_41_html = html_updated = re.sub("class=\"dataframe ", "class=\"", de33_41.head(5).to_html(classes='table table-striped',justify='left'))
+de42_50_html = html_updated = re.sub("class=\"dataframe ", "class=\"", de42_50.head(5).to_html(classes='table table-striped',justify='left'))
+
+
+## Graficos 
+#grafico 15 a 23
+de15_23=de15_23.sort_values('grau')
+de15_23.plot(kind='barh',figsize=(13,8), color="turquoise")
+plt.xlabel('Grau de interesse médio',          
+           fontdict={'family': 'serif', 
+                    'color' : 'black',
+                    'weight': 'bold',
+                    'size': 16})
+
+plt.ylabel('Interesses',          
+           fontdict={'family': 'serif', 
+                    'color' : 'black',
+                    'weight': 'bold',
+                    'size': 16})
+
+plt.title('Variação de interesses das idade de 15 a 23 anos', 
+          fontdict={'family': 'serif', 
+                    'color' : 'darkblue',
+                    'weight': 'bold',
+                    'size': 22},
+          loc='left')
+plt.legend().remove()
+
+buffer = BytesIO()
+plt.savefig(buffer, format='png')
+buffer.seek(0)
+image_png = buffer.getvalue()
+buffer.close()
+
+graphic = base64.b64encode(image_png)
+de15_23_graphic = graphic.decode('utf-8')
+
+#grafico 24 a 32
+de24_32= de24_32.sort_values('grau')
+de24_32.plot(kind='barh',figsize=(13,8), color="turquoise")
+plt.xlabel('Grau de interesse médio',          
+           fontdict={'family': 'serif', 
+                    'color' : 'black',
+                    'weight': 'bold',
+                    'size': 16})
+
+plt.ylabel('Interesses',          
+           fontdict={'family': 'serif', 
+                    'color' : 'black',
+                    'weight': 'bold',
+                    'size': 16})
+
+plt.title('Variação de interesses das idade de 24 a 32 anos', 
+          fontdict={'family': 'serif', 
+                    'color' : 'darkblue',
+                    'weight': 'bold',
+                    'size': 22},
+          loc='left')
+plt.legend().remove()
+
+buffer = BytesIO()
+plt.savefig(buffer, format='png')
+buffer.seek(0)
+image_png = buffer.getvalue()
+buffer.close()
+
+graphic = base64.b64encode(image_png)
+de24_32_graphic = graphic.decode('utf-8')
+
+#grafico 33 a 41
+de33_41= de33_41.sort_values('grau')
+de33_41.plot(kind='barh',figsize=(13,8), color="turquoise")
+plt.xlabel('Grau de interesse médio',          
+           fontdict={'family': 'serif', 
+                    'color' : 'black',
+                    'weight': 'bold',
+                    'size': 16})
+
+plt.ylabel('Interesses',          
+           fontdict={'family': 'serif', 
+                    'color' : 'black',
+                    'weight': 'bold',
+                    'size': 16})
+
+plt.title('Variação de interesses das idade de 24 a 32 anos', 
+          fontdict={'family': 'serif', 
+                    'color' : 'darkblue',
+                    'weight': 'bold',
+                    'size': 22},
+          loc='left')
+plt.legend().remove()
+
+buffer = BytesIO()
+plt.savefig(buffer, format='png')
+buffer.seek(0)
+image_png = buffer.getvalue()
+buffer.close()
+
+graphic = base64.b64encode(image_png)
+de33_41_graphic = graphic.decode('utf-8')
+
+#grafico 42 a 50
+de42_50= de42_50.sort_values('grau')
+de42_50.plot(kind='barh',figsize=(13,8), color="turquoise")
+plt.xlabel('Grau de interesse médio',          
+           fontdict={'family': 'serif', 
+                    'color' : 'black',
+                    'weight': 'bold',
+                    'size': 16})
+
+plt.ylabel('Interesses',          
+           fontdict={'family': 'serif', 
+                    'color' : 'black',
+                    'weight': 'bold',
+                    'size': 16})
+
+plt.title('Variação de interesses das idade de 24 a 32 anos', 
+          fontdict={'family': 'serif', 
+                    'color' : 'darkblue',
+                    'weight': 'bold',
+                    'size': 22},
+          loc='left')
+plt.legend().remove()
+
+buffer = BytesIO()
+plt.savefig(buffer, format='png')
+buffer.seek(0)
+image_png = buffer.getvalue()
+buffer.close()
+
+graphic = base64.b64encode(image_png)
+de42_50_graphic = graphic.decode('utf-8')
+
 
 def analise_raul(request):
-
     context = {
-        'alunos_head': alunos_head,
-        'interesses_head': interesses_head, 
-        'merge_inicial' :merge_inicial,
-        'merge_limpo':merge_limpo,
-        'tabela_idade':tabela_idade,
-        'de15_23':de15_23,
-        'de24_32':de24_32,
-        'de33_41':de33_41,
-        'de42_50':de42_50,
+        'alunos_head': alunos_head_html,
+        'interesses_head': interesses_head_html, 
+        'merge_inicial' :merge_inicial_html,
+        'merge_limpo':merge_limpo_html,
+        'tabela_idade':tabela_idade_html,
+        'de15_23':de15_23_html,
+        'de24_32':de24_32_html,
+        'de33_41':de33_41_html,
+        'de42_50':de42_50_html,
+        'de15_23_graphic':de15_23_graphic,
+        'de24_32_graphic':de24_32_graphic,
+        'de33_41_graphic':de33_41_graphic,
+        'de42_50_graphic':de42_50_graphic,
 
         
     }
