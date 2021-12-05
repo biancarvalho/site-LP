@@ -136,7 +136,7 @@ alunos_head = html_updated = re.sub("class=\"dataframe ", "class=\"", alunos_df.
 interesses_sample = html_updated = re.sub("class=\"dataframe ", "class=\"", interesses_df.sample(5).to_html(classes='table table-striped',justify='left', index=False))
 alunos_interesses_head = html_updated = re.sub("class=\"dataframe ", "class=\"", alunos_interesses_df.head(5).to_html(classes='table table-striped',justify='left', index=False))
 
-df = html_updated = re.sub("class=\"dataframe ", "class=\"", df.head(5).to_html(classes='table table-striped',justify='left', index=False))
+df_head = html_updated = re.sub("class=\"dataframe ", "class=\"", df.head(5).to_html(classes='table table-striped',justify='left', index=False))
 df_faixas = html_updated = re.sub("class=\"dataframe ", "class=\"", df_faixas.head(5).to_html(classes='table table-striped',justify='left', index=False))
 df_mais_jovens_frequencia = html_updated = re.sub("class=\"dataframe ", "class=\"", df_mais_jovens_frequencia.head(5).to_html(classes='table table-striped',justify='left', index=False))
 df_mais_jovens_frequencia2 = html_updated = re.sub("class=\"dataframe ", "class=\"", df_mais_jovens_frequencia2.head(5).to_html(classes='table table-striped',justify='left', index=False))
@@ -163,7 +163,7 @@ def main(request):
         'interesses_sample': interesses_sample,
         'alunos_interesses_head': alunos_interesses_head, 
         'merge_inicial': merge_inicial,
-        'df': df,
+        'df': df_head,
         'df_faixas': df_faixas,
 
         'df_mais_jovens_frequencia': df_mais_jovens_frequencia,

@@ -25,21 +25,17 @@ unique_original = pd.unique(df['aluno_id_id'])
 #Calculando porcentagem
 porcentagem = (len(unique_filtrado)/len(unique_original))*100
 
-
-df_filtrado = html_updated = re.sub("class=\"dataframe ", "class=\"", df_filtrado.head(10).to_html(classes='table table-striped',justify='left', index=True))
+df_filtrado = html_updated = re.sub("class=\"dataframe ", "class=\"", df_filtrado.sample(5).to_html(classes='table table-striped',justify='left', index=True))
 
 
 def eda(request):
     context = {
-        'alunos': base_analise.lista_alunos[0:10],
-        'interesses': base_analise.lista_interesses[0:10],
         'interesses_distinct': interesses_distintos,
         'interesses_saudaveis': interesses_saudaveis,
-        'aluno_interesses_df': df.values.tolist()[0:10],
         'df_filtrado': df_filtrado,
         'tamanho_filtrado': len(unique_filtrado),
         'tamanho_original': len(unique_original),
         'porcentagem': round(porcentagem, 2),
-        'df': base_analise.df,
+        'df': base_analise.df_head,
     }
     return render(request, 'cristiano/main.html', context=context)
