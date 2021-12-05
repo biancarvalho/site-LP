@@ -8,16 +8,20 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-alunos = Aluno.objects.all().values()
-interesses = Interesses.objects.all().values()
-alunos_interesses = Aluno_Interesses.objects.all().values()
+alunos = Aluno.objects
+interesses = Interesses.objects
+alunos_interesses = Aluno_Interesses.objects
 
-alunos = pd.DataFrame(alunos)
-interesses = pd.DataFrame(interesses)
-alunos_interesses = pd.DataFrame(alunos_interesses)
+lista_alunos = alunos.values()
+lista_interesses = interesses.values()
+lista_alunos_interesses = alunos_interesses.values()
+
+alunos_df = pd.DataFrame(lista_alunos)
+interesses_df = pd.DataFrame(lista_interesses)
+alunos_interesses_df = pd.DataFrame(lista_alunos_interesses)
 
 #Mergeando
-merge_inicial = alunos.merge(alunos_interesses, left_on='id', right_on='aluno_id_id').merge(interesses, left_on='interesses_id_id', right_on="id")
+merge_inicial = alunos_df.merge(alunos_interesses_df, left_on='id', right_on='aluno_id_id').merge(interesses_df, left_on='interesses_id_id', right_on="id")
 merge_inicial = merge_inicial.rename(columns={'id_x': 'id_aluno', 'nome_x': 'nome_aluno', 'id_y':'id_interesse','id_y':'id_aluno_interesse','id':'id_interesse','nome_y':'nome_interesse'})
 
 df = merge_inicial[['id_aluno_interesse','id_aluno','id_interesse','nome_aluno','sexo','idade','categoria','nome_interesse','grau']]
@@ -128,9 +132,9 @@ graphic_mais_velhos = graphic_mais_velhos.decode('utf-8')
 
 
 # Preparando dataframes que serão mostrados.
-alunos_head = html_updated = re.sub("class=\"dataframe ", "class=\"", alunos.head(5).to_html(classes='table table-striped', justify='left', index=False))
-interesses_sample = html_updated = re.sub("class=\"dataframe ", "class=\"", interesses.sample(5).to_html(classes='table table-striped',justify='left', index=False))
-alunos_interesses_head = html_updated = re.sub("class=\"dataframe ", "class=\"", alunos_interesses.head(5).to_html(classes='table table-striped',justify='left', index=False))
+alunos_head = html_updated = re.sub("class=\"dataframe ", "class=\"", alunos_df.head(5).to_html(classes='table table-striped', justify='left', index=False))
+interesses_sample = html_updated = re.sub("class=\"dataframe ", "class=\"", interesses_df.sample(5).to_html(classes='table table-striped',justify='left', index=False))
+alunos_interesses_head = html_updated = re.sub("class=\"dataframe ", "class=\"", alunos_interesses_df.head(5).to_html(classes='table table-striped',justify='left', index=False))
 
 df = html_updated = re.sub("class=\"dataframe ", "class=\"", df.head(5).to_html(classes='table table-striped',justify='left', index=False))
 df_faixas = html_updated = re.sub("class=\"dataframe ", "class=\"", df_faixas.head(5).to_html(classes='table table-striped',justify='left', index=False))
