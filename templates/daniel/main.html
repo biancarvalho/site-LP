@@ -7,25 +7,25 @@
 <h4 class="text-center"> Raul Lomonte Figueiredo </h4> <br><br>
 
 <p> Essa análise exploratória de dados tem o objetivo de responder a seguinte pergunta: </p>
-<h4> <b>  Quais são os maiores interesses em comuns? </b></h4>
+<h4> <b>  Quais os interesses que os alunos dão a maior nota? </b></h4>
 
 <p> Incialmente, vamos ver como são os dados que temos: </p>
 <h3>Tabela de informação dos alunos </h3>
-{{alunos_head |safe}}
+<div class='container col-md-11 overflow-auto'> {{alunos_head |safe}}</div>
 <br>
 <h3>Tabela dos interesses </h3>
-{{interesses_head |safe}}
+<div class='container col-md-11 overflow-auto'> {{interesses_head |safe}}</div>
 
 <p>Primeiramente vamos juntar as duas tabelas, isso será feito com a ajuda da tabela que faz a referência n:n dessas tabelas.
   Fazendo o merge e pegando apenas as colunas que nos interessam, chegamos em:
   </p>
 
 <h3>Tabela com os dados que nos importam</h3>
-{{data|safe}}
+<div class='container col-md-11 overflow-auto'> {{data|safe}}</div>
 
 <p>Agora vamos agrupar por interesse e considerar o grau como uma nota, então teremos que os interesses com maiores notas
   mais comuns e mais atrativos de acordo com a base.</p>
-{{data_soma_interesse|safe}}
+  <div class='container col-md-11 overflow-auto'> {{data_soma_interesse|safe}}</div>
 
  <p>A tabela deixa bem claro quais são os principais interesses dos alunos, mas é possivel ver uma quantidade muito
   limitada de interesses, vamos colocar isso em um gráfico para ser possível ver todos os interesses e assim ter a visão mais geral, 
@@ -33,16 +33,35 @@
 
  </p>
 
- <img src="data:image/png;base64,{{ data_soma_interesse_graf|safe }}">
-<p>Nesse ponto já respondemos à pergunta do maior interesse comum entre os alunos, mas vamos pegar os dois maiores interesses e 
-  ver melhor como foram votados. (Como a pessoa tem a opção de não votar, mesmo o interesse tendo grau um já é algo considerativo,
-  fazendo essa análise podemos ver por que Praia e Handbol são tão populares, pode haver muitas pessoas votando com notas medias
-  ou poucas pessoas votando com notas muito altas.) ---> tentei fazer essa parta mas tava dando mt erro ai larguei mao,
-  ai se possivel alguem fechar a conclusão dessa aq ou aprofundar mais antes de concluir 
+ <img class='img-fluid' src="data:image/png;base64,{{ data_soma_interesse_graf|safe  }}">
+
+<p>Nesse ponto já respondemos à pergunta do maior interesse comum entre os alunos, mas podemos tentar ir um pouco mais 
+  a fundo sobre esse tema, buscando ver o que mais interessa aos alunos de cada curso.
 </p>
+<h2>Ciencia de Dados</h2>
+ <p>Primeiro vamos ver com o que os alunos de Ciencia de dados se interessam mais.</p>
+ <p>Chegamos a esse resultado de top 5 interesses dos alunos que fazem Ciencia de Dados:</p>
+<div class='container col-md-11 overflow-auto'> {{CD_gb |safe}}</div>
+<p>Interessante ver que somente dois dos Top 5 interesses dos alunos de Ciencia de Dados estão no Top 5 geral.</p>
+<p>Agora vamos representar graficamente, para conseguir ver todos os interesses e as avaliações desses mesmos alunos.</p>
 
+<img class='img-fluid' src="data:image/png;base64,{{ CD_gb_graf|safe  }}">
 
+<p>Com o grafico da uma visão muito boa de todos os interesses, do mais votado ao menos votado.</p>
 
+<h2>Matemática Aplicada</h2>
+<p>Agora vamos ver como são os interesses das pessoas que cursam Matemática Aplicada. </p>
+<p>Esse seria o Top 5 interesses dos alunos de Matemática Aplicada:</p>
+<div class='container col-md-11 overflow-auto'> {{MAT_gb|safe}}</div>
+<p>Aqui vemos que três interesses do Top 5 de Matemática estão no Top 5 geral, e que não conhecide com nenhum interesse
+do Top 5 de Ciencia de Dados.</p>
+
+<img class='img-fluid' src="data:image/png;base64,{{ MAT_gb_graf|safe  }}">
+<h2>Matemática Aplicada e Ciencia de Dados</h2>
+Para uma comparação final entre os dois, vamos ver o top 5 dos dois juntos em apenas uma tabela e um grafico de barra duplas. 
+<div class='container col-md-11 overflow-auto'> {{CD_MAT |safe}}</div>
+
+<img class='img-fluid' src="data:image/png;base64,{{ CD_MAT_graf|safe  }}">
 
 
 {% endblock %}

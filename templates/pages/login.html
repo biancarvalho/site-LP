@@ -16,7 +16,7 @@
                         <div class="text-center mt-2 p-2">
                             <h1>Login</h1>
                             <p> Bem-vindo(a) ao Tindemap! Ainda não possui um login?
-                            <a aria-current="page" href="/cadastro.html">Cadastre-se</a>
+                            <a aria-current="page" href="{%url 'cadastro'%}">Cadastre-se</a>
                             </p>
                         </div>
                     </div>
@@ -29,11 +29,11 @@
                             <div class="form-group mt-3">
                                 <label for="input-login-senha">Insira sua senha</label>
                                 <input class="form-control mt-1" id="input-login-senha" type="password" placeholder="Insira sua senha" />
-                                <a aria-current="page" href="/recuperar_senha.html"> Esqueceu sua senha?</a>
+                                <a aria-current="page" href="{%url 'recuperar-senha'%}"> Esqueceu sua senha?</a>
                             </div>
                         </form>
                         <div class="text-center m-2 p-1">
-                            <a href="pagina_inicial.html" class="btn btn-primary">Realizar login</a>
+                            <a href="{%url 'pagina-inicial'%}" class="btn btn-primary">Realizar login</a>
                         </div>
                     </div>
                 </div>
