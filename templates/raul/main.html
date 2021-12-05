@@ -1,84 +1,41 @@
 {% extends 'pages/analise.html'%}
 {% load static %}
 
+{% block pergunta %}
+Quais interesses costumam ser selecionados em conjunto?
+{% endblock %}
+
 {% block conteudo %}
+<h4>Análise</h4>
 
-<h1 class="text-center display-4 mt-2"> Análise Exploratória de Dados </h1>
-<h4 class="text-center"> Raul Lomonte Figueiredo </h4> <br><br>
+<p>Como nas análises anteriores, partiremos do ponto desenvolvido na <a href='../bianca/main.html'>primeira análise</a> no qual já temos a tabela com alunos e
+interesses reunidos. </p>
 
-<p> Essa análise exploratória de dados tem o objetivo de responder a seguinte pergunta: </p>
-<h4> <b> Como variam os interesses conforme as idades? </b></h4>
+<div class='container col-md-11 overflow-auto my-2'> {{df |safe}} </div>
 
-<p> Incialmente, vamos ver como são os dados que temos: </p>
-<h3>Tabela de informação dos alunos </h3>
-{{alunos_head |safe}}
-<br>
-<h3>Tabela dos interesses </h3>
-{{interesses_head |safe}}
+<p>Queremos nos debruçar sobre a quesão de que interesses são mais frequentemente selecionados em conjunto.
+    Realizando alguns truques de agrupamento, é possível obter as combinações e verificar qual o par mais frequente.
+    Observa-se que o par é Praia e Handbol, com 14 ocorrências. Abaixo, podemos encontrar os 20 pares mais
+    frequentes de serem escolhidos por um usuário.</p>
 
+<div class='container col-md-11 overflow-auto my-2'> {{df0 |safe}} </div>
 
-<p>Agora, iremos juntar as duas tabelas através de uma terceira, na qual temos os registros de quais categorias e quais graus os alunos votaram.</p>
-<h3>Tabela com todas as informações</h3>
-<div class='overflow-auto'>{{merge_inicial | safe}}</div>
+Porém, e se não tivermos interessados apenas na quantidade de pares mais frequente, mas também no grau
+de importância do par? Iremos então somar o grau de cada par e chegar numa pontuação total. Esse score
+não é muito distante do do ranking encontrado anteriormente, já que os pares mais frequentes tendem a ter
+uma pontuação total maior.
 
-<p>Agora vamos pegar apenas as colunas que nos importam:</p>
+<div class='container col-md-11 overflow-auto my-2'> {{df2 |safe}} </div>
 
-<h3>Tabela com todas as informações mais limpas</h3>
-{{merge_limpo|safe}}
+<p>Precisamos então, analisar a média de cada par. Musculação e Museu rende a maior média, com 9,4. Cabe notar
+que esses resultados podem ser distorcidos devido a não haverem restrições a quão pequena pode ser a amostra.</p>
 
-<p>Aqui começamos as análises, agrupei com idade e interesse, tirei a média do grau, pois caso não fizesse isso as idades com mais pessoas teriam valor maior,
-    depois ordenei pelo grau, como são muitos interesses e muitas idades (de 15 a 50 anos) a tabela não ficou tão representativa.
- </p>
+<div class='container col-md-11 overflow-auto my-2'> {{df3 |safe}} </div>
 
-<h3>Tabela de relação idade com interesse </h3>
-{{tabela_idade|safe}}
+<h4>Conclusão</h4>
 
-<p>A maneira que encontrei para deixar tudo mais visível é dividir as idades em intervalos de nove (temos 36 idades, então teremos 4 grupos) 
-    e poderemos ver como cada interesse funciona para cada faixa etária e mostrar apenas as cinco coisas que cada faixa
-    mais se interessa e tentar notar algum padrão ou tendencia.
-</p>
+A repetida presença de handebol e praia pode indicar que usuários que gostam de ir à praia jogam handebol
+lá, ou que praticantes do esporte tem um gosto maior pelo lazer. Independente da causa, esse dado seria
+útil na otimização de anúncios em uma aplicação como a nossa.
 
-<h3>Tabela de relação de interesse com faixa etária (15 a 23)   </h3>
-{{de15_23|safe}}
-
-<h3>Tabela de relação de interesse com faixa etária (24 a 32)   </h3>
-{{de24_32|safe}}
-
-<h3>Tabela de relação de interesse com faixa etária (33 a 41)   </h3>
-{{de33_41|safe}}
-
-<h3>Tabela de relação de interesse com faixa etária (42 a 50)   </h3>
-{{de42_50|safe}}
-
-
-<p>Podemos notar que o que mais interessa aos jovens de 15 a 23 anos são novelas, alunos de 24 a 32 anos se interessam mais por futebol, os de 33 a 41 anos se interessam muito por trilhas,
-    de 42 a 50 anos se interessam em vôlei. Interessante ver que quanto mais velho, mais os gostos tentem ao principal, a maior média do interesse 
-    com as pessoas de 15 a 23 anos é 4.1, com exceção da faixa etária de 24 a 32, a média sempre aumenta, na faixa de 42 a 50 anos a media 
-    é de 4.5, quase todas as pessoas dessa faixa deram grau 5 para vôlei. Também é legal ver que Trilha faz parte do top 5 
-    interesses das três primeiras faixas etárias, mas na última não, isso pode ser gerado por conta da idade ser um fator
-    importante para uma atividade como essa. Agora veremos o que conseguimos de resultado vendo representações gráficas
-    da idade com relação aos interesses, o ajuda a visualizar muito melhor que uma tabela, por conta da alta quantidade
-    de dados.
-    </p>
-
-
-<img src="data:image/png;base64,{{ de15_23_graphic|safe }}">
-
-<img src="data:image/png;base64,{{ de24_32_graphic|safe }}">
-
-<img src="data:image/png;base64,{{ de33_41_graphic|safe }}">
-
-<img src="data:image/png;base64,{{ de42_50_graphic|safe }}">
-
-<p>Com o gráfico é possível ver uma grande quantidade de informação de maneira mais compactada. É interessante ver que todos
-os gráficos tentem para a mesma forma, gostos mais nivelados ao meio, uma certa depressão ao final e o primeiro interesse
-sempre é muito bem-marcado, sempre tem uma grande diferença do segundo lugar. 
-</p>
-
-
-<h2>Conclusão</h2>
-<p>Com essa análise foi possível ver quais são os principais interesses de cada faixa etária, além disso, ver que todas 
-as faixas se comportam de uma maneira padrão (todos os comentários foram feitos durante a análise). Por serem dados
-gerados aleatoriamente não é possível achar padrão ou marcas tão fortes de interesses marcadas pela idade, o que 
-certamente seria possível com dados reais.</p>
 {% endblock %}
