@@ -35,15 +35,18 @@ df_mais_jovens_frequencia3 = df_mais_jovens_sem_raros['nome_interesse'].value_co
 df_mais_jovens_agrupado = df_mais_jovens_sem_raros.groupby(['nome_interesse'])
 df_mais_jovens_grau = df_mais_jovens_agrupado.mean()['grau'].sort_values(ascending=False).to_frame()
 
-df_mais_jovens_grau.plot(kind='barh',figsize=(13,8), color="turquoise")
+
+matplotlib.rcParams.update({'font.size': 12,
+                            'font.family': 'sans-serif'})
+
+df_mais_jovens_grau.iloc[::-1].plot(kind='barh',figsize=(9,12), color="turquoise", )
 plt.xlabel('Grau de interesse médio')
 plt.ylabel('Interesses')
-plt.title('Variação de interesses das idade de 15 a 23 anos', loc='left')
+plt.title('Média do grau por interesse entre mais jovens (15 a 23 anos)', loc='left')
 plt.legend().remove()
 
-
 buffer = BytesIO()
-plt.savefig(buffer, format='png')
+plt.savefig(buffer, format='png', bbox_inches='tight')
 buffer.seek(0)
 image_png1 = buffer.getvalue()
 buffer.close()
@@ -63,11 +66,6 @@ df_mais_jovens_frequencia2 = html_updated = re.sub("class=\"dataframe ", "class=
 df_mais_jovens_frequencia3 = html_updated = re.sub("class=\"dataframe ", "class=\"", df_mais_jovens_frequencia3.head(5).to_html(classes='table table-striped',justify='left', index=False))
 
 df_mais_jovens_grau = html_updated = re.sub("class=\"dataframe ", "class=\"", df_mais_jovens_grau.head(5).to_html(classes='table table-striped',justify='left', index=True))
-
-
-
-
-
 
 def main(request):
     context = {

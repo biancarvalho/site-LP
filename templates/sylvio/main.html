@@ -64,6 +64,8 @@ Como variam os interesses dos usuários de acordo com as faixas etárias?
 
         <div class='container col-md-11 overflow-auto'> {{df_mais_jovens_grau |safe}} </div>
 
+        <p>Vamos visualizar esse resultado para todos os interesses em um gráfico de barras:
+        </p>
 
-        <img src="data:image/png;base64,{{ graphic_mais_jovens|safe }}">
+        <img class='img-fluid' src="data:image/png;base64,{{ graphic_mais_jovens|safe }}">
 {% endblock %}
