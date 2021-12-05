@@ -2,142 +2,47 @@
 {% load static %}
 
 {% block conteudo %}
-<h1> Análise Exploratória de Dados </h1>
-<h3> Cristiano Júnior Larréa Leal <br> </br> </h3>
+
+<h1 class="text-center display-4 mt-2"> Análise Exploratória de Dados </h1>
+<h4 class="text-center"> Raul Lomonte Figueiredo </h4> <br><br>
 
 <p> Essa análise exploratória de dados tem o objetivo de responder a seguinte pergunta: </p>
-<h4> <b> Qual porcentagem dos alunos parecem ter hábitos de vida saudáveis? </b></h4>
+<h4> <b>  Quais são os maiores interesses em comuns? </b></h4>
 
-<p> Para tanto, vamos iniciar analisando quando tipos diferentes de interesses possuímos: </p>
-{% for interesse in interesses_distinct %}
-<li>
-    {{interesse.nome}}
-</li>    
-{% endfor %}
+<p> Incialmente, vamos ver como são os dados que temos: </p>
+<h3>Tabela de informação dos alunos </h3>
+{{alunos_head |safe}}
+<br>
+<h3>Tabela dos interesses </h3>
+{{interesses_head |safe}}
 
-<p> Agora, filtramos aqueles que podem ser considerados "coisas saudáveis", que, analisando são: </p>
-{% for interesse in interesses_distinct %}
-{% if interesse.nome in interesses_saudaveis %}
-<li> 
-    {{interesse.nome}}
-</li>
-{% endif %}
-{% endfor %}    
+<p>Primeiramente vamos juntar as duas tabelas, isso será feito com a ajuda da tabela que faz a referência n:n dessas tabelas.
+  Fazendo o merge e pegando apenas as colunas que nos interessam, chegamos em:
+  </p>
 
-<p> Agora, devemos achar a quantidade de alunos que possuam esses interesses com grau alto (>=3). Essa será nossa definição de "alunos com hábitos saudáveis". </p>
-<p> Para isso, com pandas, criamos um dataframe de Alunos. Após, damos um merge com um dataframe de Interesses_Alunos (tabela intermediária) do banco de dados. Ao final, realizamos mais um merge com a tabela de interesses e, por fim, apenas devemos filtrar. </p>
-<p> Abaixo, temos os dois dataframes (Alunos e Interesses, restringidos a 20 registros) e, ao final, o dataframe de merge (também restringido a 20).
+<h3>Tabela com os dados que nos importam</h3>
+{{data|safe}}
 
-<table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Nome</th>
-        <th>Idade</th>
-        <th>sexo</th>
-        <th>Curso</th>
-        <th>Periodo</th>
-      </tr>
-    </thead>
-    <tbody>  
-    {% for aluno in alunos %}
-      <tr>
-        <td>{{aluno.nome}}</td>
-        <td>{{aluno.sexo}}</td>
-        <td>{{aluno.idade}}</td>
-        <td>{{aluno.curso}}</td>
-        <td>{{aluno.periodo}}</td>
-      </tr>
-    {% endfor %}
-    </tbody>
-</table>
+<p>Agora vamos agrupar por interesse e considerar o grau como uma nota, então teremos que os interesses com maiores notas
+  mais comuns e mais atrativos de acordo com a base.</p>
+{{data_soma_interesse|safe}}
 
-<br></br>
+ <p>A tabela deixa bem claro quais são os principais interesses dos alunos, mas é possivel ver uma quantidade muito
+  limitada de interesses, vamos colocar isso em um gráfico para ser possível ver todos os interesses e assim ter a visão mais geral, 
+  uma visão além dos primeiros. 
 
-<table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Nome</th>
-        <th>Grau</th>
-        <th>Categoria</th>
-      </tr>
-    </thead>
-    <tbody>  
-    {% for interesse in interesses %}
-      <tr>
-        <td>{{interesse.nome}}</td>
-        <td>{{interesse.grau}}</td>
-        <td>{{interesse.categoria}}</td>
-      </tr>
-    {% endfor %}
-    </tbody>
-</table>
+ </p>
 
-<h4> Dataframe de merge </h4>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Idade</th>
-      <th>Sexo</th>
-      <th>Curso</th>
-      <th>Período</th>
-      <th>Nome do Interesse</th>
-      <th>Categoria</th>
-      <th>Grau</th>
-    </tr>
-  </thead>
-  <tbody>  
-  {% for aluno in aluno_interesses_df %}
-    <tr>
-      <td>{{aluno.1}}</td>
-      <td>{{aluno.3}}</td>
-      <td>{{aluno.2}}</td>
-      <td>{{aluno.4}}</td>
-      <td>{{aluno.5}}</td>
-      <td>{{aluno.12}}</td>
-      <td>{{aluno.10}}</td>
-      <td>{{aluno.11}}</td>
-    </tr>
-  {% endfor %}
-  </tbody>
-</table>
-<br> </br>
-<p> Agora, filtramos todos os registros que contenham apenas os interesses ditos ali em cima e que o grau seja maior que 3.
-<br></br>
-<h4> Dataframe Filtrado</h4>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Idade</th>
-      <th>Sexo</th>
-      <th>Curso</th>
-      <th>Período</th>
-      <th>Nome do Interesse</th>
-      <th>Categoria</th>
-      <th>Grau</th>
-    </tr>
-  </thead>
-  <tbody>  
-  {% for aluno in df_filtrado %}
-    <tr>
-      <td>{{aluno.1}}</td>
-      <td>{{aluno.3}}</td>
-      <td>{{aluno.2}}</td>
-      <td>{{aluno.4}}</td>
-      <td>{{aluno.5}}</td>
-      <td>{{aluno.12}}</td>
-      <td>{{aluno.11}}</td>
-      <td>{{aluno.10}}</td>
-    </tr>
-  {% endfor %}
-  </tbody>
-</table>
-<br> </br>
+ <img src="data:image/png;base64,{{ data_soma_interesse_graf|safe }}">
+<p>Nesse ponto já respondemos à pergunta do maior interesse comum entre os alunos, mas vamos pegar os dois maiores interesses e 
+  ver melhor como foram votados. (Como a pessoa tem a opção de não votar, mesmo o interesse tendo grau um já é algo considerativo,
+  fazendo essa análise podemos ver por que Praia e Handbol são tão populares, pode haver muitas pessoas votando com notas medias
+  ou poucas pessoas votando com notas muito altas.) ---> tentei fazer essa parta mas tava dando mt erro ai larguei mao,
+  ai se possivel alguem fechar a conclusão dessa aq ou aprofundar mais antes de concluir 
+</p>
 
-<p> Por fim, como ambas as tabelas podem ter mais de um aluno com diferentes interesses, fazemos um .unique() por aluno e comparamos o tamanho desse com o .unique do dataframe original, para calcular a porcentagem.
-<p> Tamanho do DataFrame filtrado: {{tamanho_filtrado}} </p>
-<p> Tamanho do DataFrame original: {{tamanho_original}} </p>
-<p> E, assim, </p>
-<h4> A porcentagem de alunos que parecem ter hábitos de vida saudáveis é {{porcentagem}}%. </h4>
+
+
+
+
 {% endblock %}
