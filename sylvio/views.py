@@ -1,14 +1,12 @@
 from django.shortcuts import render
 import pandas as pd
-from pages.models import Aluno, Interesses, Aluno_Interesses
+from pages.models import *
 import re
-
 from io import BytesIO
 import base64
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-
 
 alunos = Aluno.objects.all().values()
 interesses = Interesses.objects.all().values()
@@ -22,28 +20,49 @@ alunos_interesses = pd.DataFrame(alunos_interesses)
 merge_inicial = alunos.merge(alunos_interesses, left_on='id', right_on='aluno_id_id').merge(interesses, left_on='interesses_id_id', right_on="id")
 merge_inicial = merge_inicial.rename(columns={'id_x': 'id_aluno', 'nome_x': 'nome_aluno', 'id_y':'id_interesse','id_y':'id_aluno_interesse','id':'id_interesse','nome_y':'nome_interesse'})
 
-merge_limpo =merge_inicial[['id_aluno_interesse','id_aluno','id_interesse','nome_aluno','idade','categoria','nome_interesse','grau']]
+df = merge_inicial[['id_aluno_interesse','id_aluno','id_interesse','nome_aluno','sexo','idade','categoria','nome_interesse','grau']]
 
-merge_limpo_html = html_updated = re.sub("class=\"dataframe ", "class=\"", merge_limpo.head(5).to_html(classes='table table-striped',justify='left'))
-merge_inicial_html = html_updated = re.sub("class=\"dataframe ", "class=\"", merge_inicial.head(5).to_html(classes='table table-striped',justify='left'))
+df_faixas = df.copy(deep=True)
+df_faixas["faixa_etaria"] = pd.cut(x=df_faixas['idade'], bins=[14,23,32,41,50], labels=["mais_jovens","jovens","velhos", "mais_velhos"])
+
+df_mais_jovens = df_faixas[df_faixas["faixa_etaria"] == 'mais_jovens']
+df_mais_jovens_frequencia = df_mais_jovens['nome_interesse'].value_counts().to_frame().reset_index()
+
+df_mais_jovens_frequencia2 = df_mais_jovens_frequencia.iloc[::-1]
+df_mais_jovens_sem_raros = df_mais_jovens.groupby('nome_interesse').filter(lambda x : len(x)>=5)
+df_mais_jovens_frequencia3 = df_mais_jovens_sem_raros['nome_interesse'].value_counts(ascending=True).to_frame().reset_index()
+
+df_mais_jovens_agrupado = df_mais_jovens_sem_raros.groupby(['nome_interesse'])
+df_mais_jovens_grau = df_mais_jovens_agrupado.mean()['grau'].sort_values(ascending=False).to_frame().reset_index()
 
 
-plt.clf()
-plt.plot(range(10))
+# Preparando dataframes que serão mostrados.
+alunos_head = html_updated = re.sub("class=\"dataframe ", "class=\"", alunos.head(5).to_html(classes='table table-striped', justify='left', index=False))
+interesses_sample = html_updated = re.sub("class=\"dataframe ", "class=\"", interesses.sample(5).to_html(classes='table table-striped',justify='left', index=False))
+alunos_interesses_head = html_updated = re.sub("class=\"dataframe ", "class=\"", alunos_interesses.head(5).to_html(classes='table table-striped',justify='left', index=False))
 
-buffer = BytesIO()
-plt.savefig(buffer, format='png')
-buffer.seek(0)
-image_png_1 = buffer.getvalue()
-buffer.close()
+df = html_updated = re.sub("class=\"dataframe ", "class=\"", df.head(5).to_html(classes='table table-striped',justify='left', index=False))
+df_faixas = html_updated = re.sub("class=\"dataframe ", "class=\"", df_faixas.head(5).to_html(classes='table table-striped',justify='left', index=False))
+df_mais_jovens_frequencia = html_updated = re.sub("class=\"dataframe ", "class=\"", df_mais_jovens_frequencia.head(5).to_html(classes='table table-striped',justify='left', index=False))
+df_mais_jovens_frequencia2 = html_updated = re.sub("class=\"dataframe ", "class=\"", df_mais_jovens_frequencia2.head(5).to_html(classes='table table-striped',justify='left', index=False))
+df_mais_jovens_frequencia3 = html_updated = re.sub("class=\"dataframe ", "class=\"", df_mais_jovens_frequencia3.head(5).to_html(classes='table table-striped',justify='left', index=False))
 
-graphic_1 = base64.b64encode(image_png_1)
-graphic_1 = graphic_1.decode('utf-8')
+df_mais_jovens_grau = html_updated = re.sub("class=\"dataframe ", "class=\"", df_mais_jovens_grau.head(5).to_html(classes='table table-striped',justify='left', index=False))
 
-def main(request):
+
+def analises_bianca(request):
     context = {
-        'graphic_1': graphic_1,
-        'merge_inicial' :merge_inicial_html,
-        'merge_limpo':merge_limpo_html,
+        'alunos_head': alunos_head,
+        'interesses_sample': interesses_sample,
+        'alunos_interesses_head': alunos_interesses_head, 
+        'merge_inicial': merge_inicial,
+        'df': df,
+        'df_faixas': df_faixas,
+        'df_mais_jovens_frequencia': df_mais_jovens_frequencia,
+        'df_mais_jovens_frequencia2': df_mais_jovens_frequencia2,
+        'df_mais_jovens_frequencia3': df_mais_jovens_frequencia3,
+
+        'df_mais_jovens_grau': df_mais_jovens_grau,
+
     }
-    return render(request, 'sylvio/main.html', context=context)
+    return render(request, 'bianca/main.html', context=context)

@@ -1,14 +1,69 @@
 {% extends 'pages/analise.html'%}
 {% load static %}
 
+{% block pergunta %}
+Como variam os interesses dos usuários de acordo com as faixas etárias?
+{% endblock %}
+
 {% block conteudo %}
+        <h4>1. Criando a tabela com alunos e seus interesses</h4>
+        <p> Inicialmente, vamos exibir os primeiros elementos do banco que armazena os alunos
+                para ter uma noção de como estão estruturados os dados. Observamos que cada
+                aluno possui os atributos id, nome, idade, sexo, curso e período.
+        </p>
+        <div class='container col-md-11 overflow-auto'> {{alunos_head |safe}} </div>
+        <br>
+        <p> Vamos também analisar como os interesses estão estruturados. Aqui não usaremos o cabeçalho,
+                pois os interesses estão ordenados de forma que veríamos apenas uma categoria e um grau.
+                Iremos, então, selecionar cinco interesses aleatórios.
+        </p>
+        <div class='container col-md-11 overflow-auto'> {{interesses_sample |safe}} </div>
 
-{% for interesse in interesses_distintos %}
-<li>
-    {{interesse.nome}}
-</li>    
-{% endfor %}
+        <p> Podemos então exibir o dataframe que relaciona os alunos e seus interesses. Essa relação será
+                usada pra criar um dataframe único que funde ambos.
+        </p>
+        
+        <div class='container col-md-11 overflow-auto'> {{alunos_interesses_head |safe}} </div>
 
-<img src="data:image/png;base64,{{ graphic_1|safe }}">
+        <p>Abaixo, o resultado final, com a tabela já reunindo alunos e seus interesses:</p>
+        <div class='container col-md-11 overflow-auto'> {{df |safe}} </div>
 
+        <h4 class='text my-2'>2. Dividindo por faixas etárias</h4>
+
+        <p>Vamos usar pd.cut() para dividir os usuários em quatro faixas etárias de igual tamanho:
+                <ol>
+                        <li>Mais jovens: 15 a 23 anos</li>
+                        <li>Jovens: 24 a 32 anos</li>
+                        <li>Velhos: 33 a 41 anos</li>
+                        <li>Mais velhos: 42 a 50 anos</li>
+                </ol>
+        Iremos analisar os interesses em cada uma delas, mas primeiro vamos ver o dataframe com as
+        divisões por faixas etárias.
+        </p>
+        <div class='container col-md-11 overflow-auto'> {{df_faixas |safe}} </div>
+        
+        <h4>3. Mais Jovens (15 a 23 anos)</h4>
+
+        <p>Abaixo podemos ver os interesses mais frequentes entre os mais jovens:</p>
+        <div class='container col-md-11 overflow-auto'> {{df_mais_jovens_frequencia |safe}} </div>
+
+        <p>E também os interesses menos frequentes entre os mais jovens:</p>
+        <div class='container col-md-11 overflow-auto'> {{df_mais_jovens_frequencia2 |safe}} </div>
+        
+        <p>Vamos exibir os interesses com maior grau de intensidade entre os mais jovens. No entanto,
+                precisamos nos atentar a um detalhe. Interesses com baixa frequência podem apresentar
+                uma média com baixa representação do grupo, distorcendo os resultados. Por isso, vamos
+                remover interesses com menos de 5 ocorrências.
+        </p>
+
+        <div class='container col-md-11 overflow-auto'> {{df_mais_jovens_frequencia3 |safe}} </div>
+
+        <p>Podemos então descobrir a média de grau por interesse, descobrindo os interesses mais
+                relevantes para os mais jovens.
+        </p>
+
+        <div class='container col-md-11 overflow-auto'> {{df_mais_jovens_grau |safe}} </div>
+
+
+        <img src="data:image/png;base64,{{ graphic|safe }}">
 {% endblock %}

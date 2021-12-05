@@ -27,7 +27,7 @@ merge_limpo =merge_inicial[['id_aluno_interesse','id_aluno','id_interesse','nome
 
 ###Começando analise de verdade
 #fazendo a tabela relacionado idade com os interesses
-tabela_idade_dados=merge_limpo[['idade','grau','nome_interesse']]
+tabela_idade_dados = merge_limpo[['idade','grau','nome_interesse']]
 tabela_idade = tabela_idade_dados.groupby(['idade','nome_interesse']).mean().sort_values(['idade','grau'],ascending=False)
 
 ##Separando a tabela por grupos de idades
