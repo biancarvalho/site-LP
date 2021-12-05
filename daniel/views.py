@@ -57,7 +57,7 @@ CD_MAT=CD_MAT.rename(columns={'grau_x': 'grau_CD','grau_y':'grau_MAT'})
 CD_MAT['soma'] = CD_MAT.sum(axis=1)
 CD_MAT=CD_MAT.sort_values(['soma'],ascending=False)
 
-CD_MAT_graf=CD_MAT.head(10)
+CD_MAT_graf=CD_MAT.head(18)
 CD_MAT_graf=CD_MAT_graf.sort_values(['soma'],ascending=True)
 
 # Preparando dataframes que serão mostrados.
