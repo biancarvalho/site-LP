@@ -54,6 +54,79 @@ buffer.close()
 graphic_mais_jovens = base64.b64encode(image_png1)
 graphic_mais_jovens = graphic_mais_jovens.decode('utf-8')
 
+df_jovens = df_faixas[df_faixas["faixa_etaria"] == 'jovens']
+df_jovens_frequencia = df_jovens['nome_interesse'].value_counts().to_frame().reset_index()
+
+df_jovens_frequencia2 = df_jovens_frequencia.iloc[::-1]
+df_jovens_sem_raros = df_jovens.groupby('nome_interesse').filter(lambda x : len(x)>=5)
+
+df_jovens_agrupado = df_jovens_sem_raros.groupby(['nome_interesse'])
+df_jovens_grau = df_jovens_agrupado.mean()['grau'].sort_values(ascending=False).to_frame()
+
+df_jovens_grau.iloc[::-1].plot(kind='barh',figsize=(9,12), color="red", )
+plt.xlabel('Grau de interesse médio')
+plt.ylabel('Interesses')
+plt.title('Média do grau por interesse entre jovens (24 a 32 anos)', loc='left')
+plt.legend().remove()
+
+buffer = BytesIO()
+plt.savefig(buffer, format='png', bbox_inches='tight')
+buffer.seek(0)
+image_png2 = buffer.getvalue()
+buffer.close()
+
+graphic_jovens = base64.b64encode(image_png2)
+graphic_jovens = graphic_jovens.decode('utf-8')
+
+df_velhos = df_faixas[df_faixas["faixa_etaria"] == 'velhos']
+df_velhos_frequencia = df_velhos['nome_interesse'].value_counts().to_frame().reset_index()
+
+df_velhos_frequencia2 = df_velhos_frequencia.iloc[::-1]
+df_velhos_sem_raros = df_velhos.groupby('nome_interesse').filter(lambda x : len(x)>=5)
+
+df_velhos_agrupado = df_velhos_sem_raros.groupby(['nome_interesse'])
+df_velhos_grau = df_velhos_agrupado.mean()['grau'].sort_values(ascending=False).to_frame()
+
+df_velhos_grau.iloc[::-1].plot(kind='barh',figsize=(9,12), color="green", )
+plt.xlabel('Grau de interesse médio')
+plt.ylabel('Interesses')
+plt.title('Média do grau por interesse entre velhos (33 a 41 anos)', loc='left')
+plt.legend().remove()
+
+buffer = BytesIO()
+plt.savefig(buffer, format='png', bbox_inches='tight')
+buffer.seek(0)
+image_png3 = buffer.getvalue()
+buffer.close()
+
+graphic_velhos = base64.b64encode(image_png3)
+graphic_velhos = graphic_velhos.decode('utf-8')
+
+df_mais_velhos = df_faixas[df_faixas["faixa_etaria"] == 'mais_velhos']
+df_mais_velhos_frequencia = df_mais_velhos['nome_interesse'].value_counts().to_frame().reset_index()
+
+df_mais_velhos_frequencia2 = df_mais_velhos_frequencia.iloc[::-1]
+df_mais_velhos_sem_raros = df_mais_velhos.groupby('nome_interesse').filter(lambda x : len(x)>=5)
+
+df_mais_velhos_agrupado = df_mais_velhos_sem_raros.groupby(['nome_interesse'])
+df_mais_velhos_grau = df_mais_velhos_agrupado.mean()['grau'].sort_values(ascending=False).to_frame()
+
+df_mais_velhos_grau.iloc[::-1].plot(kind='barh',figsize=(9,12), color="purple", )
+plt.xlabel('Grau de interesse médio')
+plt.ylabel('Interesses')
+plt.title('Média do grau por interesse entre mais velhos (42 a 50 anos)', loc='left')
+plt.legend().remove()
+
+buffer = BytesIO()
+plt.savefig(buffer, format='png', bbox_inches='tight')
+buffer.seek(0)
+image_png4 = buffer.getvalue()
+buffer.close()
+
+graphic_mais_velhos = base64.b64encode(image_png4)
+graphic_mais_velhos = graphic_mais_velhos.decode('utf-8')
+
+
 # Preparando dataframes que serão mostrados.
 alunos_head = html_updated = re.sub("class=\"dataframe ", "class=\"", alunos.head(5).to_html(classes='table table-striped', justify='left', index=False))
 interesses_sample = html_updated = re.sub("class=\"dataframe ", "class=\"", interesses.sample(5).to_html(classes='table table-striped',justify='left', index=False))
@@ -64,8 +137,21 @@ df_faixas = html_updated = re.sub("class=\"dataframe ", "class=\"", df_faixas.he
 df_mais_jovens_frequencia = html_updated = re.sub("class=\"dataframe ", "class=\"", df_mais_jovens_frequencia.head(5).to_html(classes='table table-striped',justify='left', index=False))
 df_mais_jovens_frequencia2 = html_updated = re.sub("class=\"dataframe ", "class=\"", df_mais_jovens_frequencia2.head(5).to_html(classes='table table-striped',justify='left', index=False))
 df_mais_jovens_frequencia3 = html_updated = re.sub("class=\"dataframe ", "class=\"", df_mais_jovens_frequencia3.head(5).to_html(classes='table table-striped',justify='left', index=False))
-
 df_mais_jovens_grau = html_updated = re.sub("class=\"dataframe ", "class=\"", df_mais_jovens_grau.head(5).to_html(classes='table table-striped',justify='left', index=True))
+
+df_jovens_frequencia = html_updated = re.sub("class=\"dataframe ", "class=\"", df_jovens_frequencia.head(5).to_html(classes='table table-striped',justify='left', index=False))
+df_jovens_frequencia2 = html_updated = re.sub("class=\"dataframe ", "class=\"", df_jovens_frequencia2.head(5).to_html(classes='table table-striped',justify='left', index=False))
+df_jovens_grau = html_updated = re.sub("class=\"dataframe ", "class=\"", df_jovens_grau.head(5).to_html(classes='table table-striped',justify='left', index=True))
+
+df_velhos_frequencia = html_updated = re.sub("class=\"dataframe ", "class=\"", df_velhos_frequencia.head(5).to_html(classes='table table-striped',justify='left', index=False))
+df_velhos_frequencia2 = html_updated = re.sub("class=\"dataframe ", "class=\"", df_velhos_frequencia2.head(5).to_html(classes='table table-striped',justify='left', index=False))
+df_velhos_grau = html_updated = re.sub("class=\"dataframe ", "class=\"", df_velhos_grau.head(5).to_html(classes='table table-striped',justify='left', index=True))
+
+df_mais_velhos_frequencia = html_updated = re.sub("class=\"dataframe ", "class=\"", df_mais_velhos_frequencia.head(5).to_html(classes='table table-striped',justify='left', index=False))
+df_mais_velhos_frequencia2 = html_updated = re.sub("class=\"dataframe ", "class=\"", df_mais_velhos_frequencia2.head(5).to_html(classes='table table-striped',justify='left', index=False))
+df_mais_velhos_grau = html_updated = re.sub("class=\"dataframe ", "class=\"", df_mais_velhos_grau.head(5).to_html(classes='table table-striped',justify='left', index=True))
+
+
 
 def main(request):
     context = {
@@ -75,12 +161,27 @@ def main(request):
         'merge_inicial': merge_inicial,
         'df': df,
         'df_faixas': df_faixas,
+
         'df_mais_jovens_frequencia': df_mais_jovens_frequencia,
         'df_mais_jovens_frequencia2': df_mais_jovens_frequencia2,
         'df_mais_jovens_frequencia3': df_mais_jovens_frequencia3,
-
         'df_mais_jovens_grau': df_mais_jovens_grau,
         'graphic_mais_jovens': graphic_mais_jovens,
+
+        'df_jovens_frequencia': df_jovens_frequencia,
+        'df_jovens_frequencia2': df_jovens_frequencia2,
+        'df_jovens_grau': df_jovens_grau,
+        'graphic_jovens': graphic_jovens,
+
+        'df_velhos_frequencia': df_velhos_frequencia,
+        'df_velhos_frequencia2': df_velhos_frequencia2,
+        'df_velhos_grau': df_velhos_grau,
+        'graphic_velhos': graphic_velhos,
+
+        'df_mais_velhos_frequencia': df_mais_velhos_frequencia,
+        'df_mais_velhos_frequencia2': df_mais_velhos_frequencia2,
+        'df_mais_velhos_grau': df_mais_velhos_grau,
+        'graphic_mais_velhos': graphic_mais_velhos,
 
     }
     return render(request, 'sylvio/main.html', context=context)

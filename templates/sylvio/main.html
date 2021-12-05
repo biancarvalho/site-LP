@@ -42,7 +42,7 @@ Como variam os interesses dos usuários de acordo com as faixas etárias?
         </p>
         <div class='container col-md-11 overflow-auto'> {{df_faixas |safe}} </div>
         
-        <h4>3. Mais Jovens (15 a 23 anos)</h4>
+        <h4 class='mt-4'>3. Mais Jovens (15 a 23 anos)</h4>
 
         <p>Abaixo podemos ver os interesses mais frequentes entre os mais jovens:</p>
         <div class='container col-md-11 overflow-auto'> {{df_mais_jovens_frequencia |safe}} </div>
@@ -68,4 +68,52 @@ Como variam os interesses dos usuários de acordo com as faixas etárias?
         </p>
 
         <img class='img-fluid' src="data:image/png;base64,{{ graphic_mais_jovens|safe }}">
+
+        <p>Nas análises dos próximos grupos, o processo de remover os interesses de baixa frequência são
+                é repetido, mas não será exibido na análise.
+        </p>
+
+        <h4 class='mt-4'>4. Jovens (24 a 32 anos)</h4>
+
+        <p>Abaixo podemos ver os interesses mais frequentes entre os jovens:</p>
+        <div class='container col-md-11 overflow-auto'> {{df_jovens_frequencia |safe}} </div>
+
+        <p>E também os interesses menos frequentes entre os jovens:</p>
+        <div class='container col-md-11 overflow-auto'> {{df_jovens_frequencia2 |safe}} </div>
+        
+        <p>Esses são os interesses de maior grau médio entre os jovens:</p>
+        <div class='container col-md-11 overflow-auto'> {{df_jovens_grau |safe}} </div>
+
+        <p>E todos os interesses entre os jovens, ordenados:</p>
+        <img class='img-fluid' src="data:image/png;base64,{{ graphic_jovens|safe }}">
+
+        <h4 class='mt-4'>5. Velhos (33 a 41 anos)</h4>
+
+        <p>Abaixo podemos ver os interesses mais frequentes entre os velhos:</p>
+        <div class='container col-md-11 overflow-auto'> {{df_velhos_frequencia |safe}} </div>
+
+        <p>E também os interesses menos frequentes entre os velhos:</p>
+        <div class='container col-md-11 overflow-auto'> {{df_velhos_frequencia2 |safe}} </div>
+        
+        <p>Esses são os interesses de maior grau médio entre os velhos:</p>
+        <div class='container col-md-11 overflow-auto'> {{df_velhos_grau |safe}} </div>
+
+        <p>E todos os interesses entre os velhos, ordenados:</p>
+        <img class='img-fluid' src="data:image/png;base64,{{ graphic_velhos|safe }}">
+
+        <h4 class='mt-4'>6. Mais Velhos (42 a 50 anos)</h4>
+
+        <p>Abaixo podemos ver os interesses mais frequentes entre os mais velhos:</p>
+        <div class='container col-md-11 overflow-auto'> {{df_mais_velhos_frequencia |safe}} </div>
+
+        <p>E também os interesses menos frequentes entre os mais velhos:</p>
+        <div class='container col-md-11 overflow-auto'> {{df_mais_velhos_frequencia2 |safe}} </div>
+        
+        <p>Esses são os interesses de maior grau médio entre os mais velhos:</p>
+        <div class='container col-md-11 overflow-auto'> {{df_mais_velhos_grau |safe}} </div>
+
+        <p>E todos os interesses entre os mais velhos, ordenados:</p>
+        <img class='img-fluid' src="data:image/png;base64,{{ graphic_mais_velhos|safe }}">
+
+
 {% endblock %}
