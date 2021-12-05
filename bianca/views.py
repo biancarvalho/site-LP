@@ -7,6 +7,7 @@ import base64
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 alunos = Aluno.objects.all().values()
 interesses = Interesses.objects.all().values()
@@ -22,23 +23,125 @@ merge_inicial = merge_inicial.rename(columns={'id_x': 'id_aluno', 'nome_x': 'nom
 
 df = merge_inicial[['id_aluno_interesse','id_aluno','id_interesse','nome_aluno','sexo','idade','categoria','nome_interesse','grau']]
 
-# Filtrando os dados para grande grau de interesse, ou seja, maior ou igual a 3 e separando por sexo.
-df_m = df[(df.sexo == 'M') & (df.grau >= 3)]
-df_f = df[(df.sexo == 'F') & (df.grau >= 3)]
-freq = df.groupby(['categoria']).count()
-df['sexo'].replace(to_replace='F', value=1, inplace=True)
-df['sexo'].replace(to_replace='M', value=0, inplace=True)
-df1 = df.groupby(['categoria'])
+# Filtrando os dados
+df_sexo = df[['sexo','grau','nome_interesse','categoria']]
 
-df1.plot(x="categoria", y="sexo", kind="bar") 
+##Separando a tabela pelo sexo
+#Tabela de interesses de pessoas do sexo feminino  
+df_f = df_sexo[df_sexo['sexo']=='F']
+
+#Tabela de interesses de pessoas do sexo mascFalulino  
+df_m = df_sexo[df_sexo['sexo']=='M']
+
+
+## Graficos 
+
+#grafico sexo feminino
+plt.figure(figsize=(11,6))
+sns.violinplot(data=df, x="grau", y="categoria", hue="sexo",
+               split=True, inner="quart", linewidth=1, palette='bright')
+
+plt.xlabel('Grau de interesse',          
+           fontdict={'family': 'serif', 
+                    'color' : 'black',
+                    'weight': 'bold',
+                    'size': 10})
+
+plt.ylabel('Interesses',          
+           fontdict={'family': 'serif', 
+                    'color' : 'black',
+                    'weight': 'bold',
+                    'size': 10})
+
+plt.title('Variação de interesses do sexo feminino', 
+          fontdict={'family': 'serif', 
+                    'color' : 'darkblue',
+                    'weight': 'bold',
+                    'size': 20},
+          loc='left')
+plt.legend().remove()
+
 buffer = BytesIO()
 plt.savefig(buffer, format='png')
 buffer.seek(0)
 image_png = buffer.getvalue()
 buffer.close()
 
-graphic = base64.b64encode(image_png)
-graphic = graphic.decode('utf-8')
+grafico1 = base64.b64encode(image_png)
+grafico1 = grafico1.decode('utf-8')
+
+#grafico sexo masculino
+plt.rcParams.update({'font.family': 'serif',
+                    'font.size': 8})
+
+plt.figure(figsize=(11,9))                    
+sns.boxplot(x='grau', y='nome_interesse', data=df_m)
+
+plt.xlabel('Grau de interesse',          
+           fontdict={'family': 'serif', 
+                    'color' : 'black',
+                    'weight': 'bold',
+                    'size': 10})
+
+plt.ylabel('Interesses',          
+           fontdict={'family': 'serif', 
+                    'color' : 'black',
+                    'weight': 'bold',
+                    'size': 10})
+
+plt.title('Variação de interesses do sexo masculino', 
+          fontdict={'family': 'serif', 
+                    'color' : 'darkblue',
+                    'weight': 'bold',
+                    'size': 20},
+          loc='left')
+plt.legend().remove()
+
+buffer = BytesIO()
+plt.savefig(buffer, format='png')
+buffer.seek(0)
+image_png = buffer.getvalue()
+buffer.close()
+
+grafico2 = base64.b64encode(image_png)
+grafico2 = grafico2.decode('utf-8')
+
+#grafico sexo feminino
+plt.rcParams.update({'font.family': 'serif',
+                    'font.size': 8})
+
+plt.figure(figsize=(11,9))                    
+sns.boxplot(x='grau', y='nome_interesse', data=df_f)
+
+plt.xlabel('Grau de interesse',          
+           fontdict={'family': 'serif', 
+                    'color' : 'black',
+                    'weight': 'bold',
+                    'size': 10})
+
+plt.ylabel('Interesses',          
+           fontdict={'family': 'serif', 
+                    'color' : 'black',
+                    'weight': 'bold',
+                    'size': 10})
+
+plt.title('Variação de interesses do sexo masculino', 
+          fontdict={'family': 'serif', 
+                    'color' : 'darkblue',
+                    'weight': 'bold',
+                    'size': 20},
+          loc='left')
+plt.legend().remove()
+
+buffer = BytesIO()
+plt.savefig(buffer, format='png')
+buffer.seek(0)
+image_png = buffer.getvalue()
+buffer.close()
+
+grafico3 = base64.b64encode(image_png)
+grafico3 = grafico3.decode('utf-8')
+
 
 # Preparando dataframes que serão mostrados.
 alunos_head = html_updated = re.sub("class=\"dataframe ", "class=\"", alunos.head(5).to_html(classes='table table-striped',justify='left'))
@@ -46,6 +149,7 @@ interesses_head = html_updated = re.sub("class=\"dataframe ", "class=\"", intere
 df = html_updated = re.sub("class=\"dataframe ", "class=\"", df.head(5).to_html(classes='table table-striped',justify='left'))
 df_m = html_updated = re.sub("class=\"dataframe ", "class=\"", df_m.head(5).to_html(classes='table table-striped',justify='left'))
 df_f = html_updated = re.sub("class=\"dataframe ", "class=\"", df_f.head(5).to_html(classes='table table-striped',justify='left'))
+
 
 def analises_bianca(request):
     context = {
@@ -55,6 +159,8 @@ def analises_bianca(request):
         'df': df,
         'df_f': df_f,
         'df_m': df_m,
-        'graphic': graphic,
+        'grafico1': grafico1,
+        'grafico2': grafico2,
+        'grafico3': grafico3,
     }
     return render(request, 'bianca/main.html', context=context)

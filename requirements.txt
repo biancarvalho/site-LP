@@ -30,3 +30,5 @@ tornado==6.1
 traitlets==5.1.1
 wcwidth==0.2.5
 matplotlib==3.5.0
+seaborn==0.11.2
+jupyter==1.0.0
