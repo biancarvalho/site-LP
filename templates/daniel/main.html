@@ -1,46 +1,39 @@
 {% extends 'pages/analise.html'%}
 {% load static %}
 
+{% block pergunta %}
+Com o que os alunos mais se interessam? 
+{% endblock %}
+
+
 {% block conteudo %}
 
-<h1 class="text-center display-4 mt-2"> Análise Exploratória de Dados </h1>
-<h4 class="text-center"> Raul Lomonte Figueiredo </h4> <br><br>
 
-<p> Essa análise exploratória de dados tem o objetivo de responder a seguinte pergunta: </p>
-<h4> <b>  Quais os interesses que os alunos dão a maior nota? </b></h4>
+<h3>Análise</h3>
+<p>Considerando o ponto das análises anteriores, usaremos a tabela que liga os interesses aos alunos.</p>
 
-<p> Incialmente, vamos ver como são os dados que temos: </p>
-<h3>Tabela de informação dos alunos </h3>
-<div class='container col-md-11 overflow-auto'> {{alunos_head |safe}}</div>
-<br>
-<h3>Tabela dos interesses </h3>
-<div class='container col-md-11 overflow-auto'> {{interesses_head |safe}}</div>
-
-<p>Primeiramente vamos juntar as duas tabelas, isso será feito com a ajuda da tabela que faz a referência n:n dessas tabelas.
-  Fazendo o merge e pegando apenas as colunas que nos interessam, chegamos em:
-  </p>
-
-<h3>Tabela com os dados que nos importam</h3>
+<h4>1. Selecionando dados para analise</h4>
+<p>Nessa análise pretendo ver os maiores interesses de todos os alunos, 
+  os interesses dos alunos por curso e ver se existe relação entre os cursos,
+   então selecionei apenas esses dados da tabela inicial para a análise. </p>
 <div class='container col-md-11 overflow-auto'> {{data|safe}}</div>
 
-<p>Agora vamos agrupar por interesse e considerar o grau como uma nota, então teremos que os interesses com maiores notas
-  mais comuns e mais atrativos de acordo com a base.</p>
+<h4>2. Analisando o interesse de todos os alunos. </h4>
+<p>Agora vamos agrupar por interesse e considerar o grau como uma nota, então teremos que as categorias com maiores notas
+  mais interessantes para os alunos.</p>
   <div class='container col-md-11 overflow-auto'> {{data_soma_interesse|safe}}</div>
 
- <p>A tabela deixa bem claro quais são os principais interesses dos alunos, mas é possivel ver uma quantidade muito
-  limitada de interesses, vamos colocar isso em um gráfico para ser possível ver todos os interesses e assim ter a visão mais geral, 
-  uma visão além dos primeiros. 
-
+ <p>A tabela deixa bem claro quais são os principais interesses dos alunos, mas é possível ver uma quantidade muito
+  limitada de interesses, vamos colocar isso em um gráfico para ser possível ver todos os interesses e assim ter a visão mais geral, além dos primeiros. 
  </p>
 
  <img class='img-fluid' src="data:image/png;base64,{{ data_soma_interesse_graf|safe  }}">
 
-<p>Nesse ponto já respondemos à pergunta do maior interesse comum entre os alunos, mas podemos tentar ir um pouco mais 
-  a fundo sobre esse tema, buscando ver o que mais interessa aos alunos de cada curso.
+<p>Assim já conseguimos ver claramente o interesse dos alunos, de forma geral, sobre cada tema. 
 </p>
-<h2>Ciencia de Dados</h2>
- <p>Primeiro vamos ver com o que os alunos de Ciencia de dados se interessam mais.</p>
- <p>Chegamos a esse resultado de top 5 interesses dos alunos que fazem Ciencia de Dados:</p>
+<h4>3. Analisando o interesse dos alunos de Ciência de Dados</h2>
+ <p>Primeiro vamos ver com o que os alunos de Ciência de dados se interessam mais.</p>
+ <p>Chegamos a esse resultado de top 5 interesses dos alunos que fazem Ciência de Dados:</p>
 <div class='container col-md-11 overflow-auto'> {{CD_gb |safe}}</div>
 <p>Interessante ver que somente dois dos Top 5 interesses dos alunos de Ciencia de Dados estão no Top 5 geral.</p>
 <p>Agora vamos representar graficamente, para conseguir ver todos os interesses e as avaliações desses mesmos alunos.</p>
@@ -49,7 +42,7 @@
 
 <p>Com o grafico da uma visão muito boa de todos os interesses, do mais votado ao menos votado.</p>
 
-<h2>Matemática Aplicada</h2>
+<h4>4. Analisando o interesse dos alunos de Matemática Aplicada</h2>
 <p>Agora vamos ver como são os interesses das pessoas que cursam Matemática Aplicada. </p>
 <p>Esse seria o Top 5 interesses dos alunos de Matemática Aplicada:</p>
 <div class='container col-md-11 overflow-auto'> {{MAT_gb|safe}}</div>
