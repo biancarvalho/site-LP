@@ -145,9 +145,7 @@ grafico3 = grafico3.decode('utf-8')
 
 # Preparando dataframes que serão mostrados.
 alunos_head = html_updated = re.sub("class=\"dataframe ", "class=\"", alunos.head(5).to_html(classes='table table-striped',justify='left'))
-interesses_sample = html_updated = re.sub("class=\"dataframe ", "class=\"", interesses.sample(5).to_html(classes='table table-striped',justify='left'))
-alunos_interesses_head = html_updated = re.sub("class=\"dataframe ", "class=\"", alunos_interesses.head(5).to_html(classes='table table-striped',justify='left'))
-
+interesses_head = html_updated = re.sub("class=\"dataframe ", "class=\"", interesses.head(5).to_html(classes='table table-striped',justify='left'))
 df = html_updated = re.sub("class=\"dataframe ", "class=\"", df.head(5).to_html(classes='table table-striped',justify='left'))
 df_m = html_updated = re.sub("class=\"dataframe ", "class=\"", df_m.head(5).to_html(classes='table table-striped',justify='left'))
 df_f = html_updated = re.sub("class=\"dataframe ", "class=\"", df_f.head(5).to_html(classes='table table-striped',justify='left'))
@@ -156,8 +154,7 @@ df_f = html_updated = re.sub("class=\"dataframe ", "class=\"", df_f.head(5).to_h
 def analises_bianca(request):
     context = {
         'alunos_head': alunos_head,
-        'interesses_sample': interesses_sample,
-        'alunos_interesses_head': alunos_interesses_head, 
+        'interesses_head': interesses_head, 
         'merge_inicial': merge_inicial,
         'df': df,
         'df_f': df_f,

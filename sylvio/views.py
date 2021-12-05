@@ -33,8 +33,23 @@ df_mais_jovens_sem_raros = df_mais_jovens.groupby('nome_interesse').filter(lambd
 df_mais_jovens_frequencia3 = df_mais_jovens_sem_raros['nome_interesse'].value_counts(ascending=True).to_frame().reset_index()
 
 df_mais_jovens_agrupado = df_mais_jovens_sem_raros.groupby(['nome_interesse'])
-df_mais_jovens_grau = df_mais_jovens_agrupado.mean()['grau'].sort_values(ascending=False).to_frame().reset_index()
+df_mais_jovens_grau = df_mais_jovens_agrupado.mean()['grau'].sort_values(ascending=False).to_frame()
 
+df_mais_jovens_grau.plot(kind='barh',figsize=(13,8), color="turquoise")
+plt.xlabel('Grau de interesse médio')
+plt.ylabel('Interesses')
+plt.title('Variação de interesses das idade de 15 a 23 anos', loc='left')
+plt.legend().remove()
+
+
+buffer = BytesIO()
+plt.savefig(buffer, format='png')
+buffer.seek(0)
+image_png1 = buffer.getvalue()
+buffer.close()
+
+graphic_mais_jovens = base64.b64encode(image_png1)
+graphic_mais_jovens = graphic_mais_jovens.decode('utf-8')
 
 # Preparando dataframes que serão mostrados.
 alunos_head = html_updated = re.sub("class=\"dataframe ", "class=\"", alunos.head(5).to_html(classes='table table-striped', justify='left', index=False))
@@ -47,7 +62,11 @@ df_mais_jovens_frequencia = html_updated = re.sub("class=\"dataframe ", "class=\
 df_mais_jovens_frequencia2 = html_updated = re.sub("class=\"dataframe ", "class=\"", df_mais_jovens_frequencia2.head(5).to_html(classes='table table-striped',justify='left', index=False))
 df_mais_jovens_frequencia3 = html_updated = re.sub("class=\"dataframe ", "class=\"", df_mais_jovens_frequencia3.head(5).to_html(classes='table table-striped',justify='left', index=False))
 
-df_mais_jovens_grau = html_updated = re.sub("class=\"dataframe ", "class=\"", df_mais_jovens_grau.head(5).to_html(classes='table table-striped',justify='left', index=False))
+df_mais_jovens_grau = html_updated = re.sub("class=\"dataframe ", "class=\"", df_mais_jovens_grau.head(5).to_html(classes='table table-striped',justify='left', index=True))
+
+
+
+
 
 
 def main(request):
@@ -63,6 +82,7 @@ def main(request):
         'df_mais_jovens_frequencia3': df_mais_jovens_frequencia3,
 
         'df_mais_jovens_grau': df_mais_jovens_grau,
+        'graphic_mais_jovens': graphic_mais_jovens,
 
     }
     return render(request, 'sylvio/main.html', context=context)
