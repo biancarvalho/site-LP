@@ -50,7 +50,7 @@ df_mais_jovens_frequencia3 = html_updated = re.sub("class=\"dataframe ", "class=
 df_mais_jovens_grau = html_updated = re.sub("class=\"dataframe ", "class=\"", df_mais_jovens_grau.head(5).to_html(classes='table table-striped',justify='left', index=False))
 
 
-def analises_bianca(request):
+def main(request):
     context = {
         'alunos_head': alunos_head,
         'interesses_sample': interesses_sample,
@@ -65,4 +65,4 @@ def analises_bianca(request):
         'df_mais_jovens_grau': df_mais_jovens_grau,
 
     }
-    return render(request, 'bianca/main.html', context=context)
+    return render(request, 'sylvio/main.html', context=context)
