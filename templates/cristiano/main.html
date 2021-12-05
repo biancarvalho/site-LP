@@ -1,14 +1,13 @@
 {% extends 'pages/analise.html'%}
 {% load static %}
 
+{% block pergunta %}
+Qual porcentagem dos alunos parecem ter hábitos de vida saudáveis?
+{% endblock %}
+
 {% block conteudo %}
-<h1> Análise Exploratória de Dados </h1>
-<h3> Cristiano Júnior Larréa Leal <br> </br> </h3>
 
-<p> Essa análise exploratória de dados tem o objetivo de responder a seguinte pergunta: </p>
-<h4> <b> Qual porcentagem dos alunos parecem ter hábitos de vida saudáveis? </b></h4>
-
-<p> Para tanto, vamos iniciar analisando quando tipos diferentes de interesses possuímos: </p>
+<p> Para responder a essa pergunta, vamos iniciar analisando quando tipos diferentes de interesses possuímos: </p>
 {% for interesse in interesses_distinct %}
 <li>
     {{interesse.nome}}

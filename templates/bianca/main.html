@@ -1,20 +1,30 @@
 {% extends 'pages/analise.html'%}
 {% load static %}
 
+{% block pergunta %}
+Como variam os interesses dos usuários de acordo com as faixas etárias?
+{% endblock %}
+
 {% block conteudo %}
-    
-        <h2 style="text-align:center">Análise Exploratória de Dados</h1>
-        <h3 style="text-align:center">Bianca Dias de Carvalho</h3>
-
-        <p>Essa análise exploratória de dados tem o objetivo de responder a seguinte pergunta:</p>
-        <h4 style="text-align:center">Como variam os interesses conforme as idades?</b></h4>   
-
-        <p> Inicialmente, vamos ver como são os dados que temos: </p>
-        <h3 style="text-align:center">Tabela de informação dos alunos </h3>
-        {{alunos_head |safe}}
+        <p> Inicialmente, vamos exibir os primeiros elementos do banco que armazena os alunos
+                para ter uma noção de como estão estruturados os dados. Observamos que cada
+                aluno possui os atributos id, nome, idade, sexo, curso e período.
+        </p>
+        <div class='container col-md-11'> {{alunos_head |safe}} </div>
         <br>
-        <h3 style="text-align:center">Tabela dos interesses </h3>
-        {{interesses_head |safe}}
+        <p> Vamos também analisar como os interesses estão estruturados. Aqui não usaremos o cabeçalho,
+                pois os interesses estão ordenados de forma que veríamos apenas uma categoria e um grau.
+                Iremos, então, selecionar cinco interesses aleatórios.
+        </p>
+        <div class='container col-md-11'> {{interesses_sample |safe}} </div>
+
+        <p> Podemos então exibir o dataframe que relaciona os alunos e seus interesses. Essa relação será
+                usada pra criar um dataframe único que funde ambos.
+        </p>
+        <div class='container col-md-11'> {{alunos_interesses_head |safe}} </div>
+
+        Abaixo, o resultado final, com a tabela 
+
         <h3 style="text-align:center">Tabela fundida</h3>
         {{df | safe}}
         <h3 style="text-align:center">Tabela: sexo feminino e alto grau de interesse</h3>

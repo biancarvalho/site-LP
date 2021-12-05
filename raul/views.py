@@ -102,7 +102,7 @@ de15_23_graphic = de15_23_graphic.decode('utf-8')
 
 #grafico 24 a 32
 de24_32= de24_32.sort_values('grau')
-de24_32.plot(kind='barh',figsize=(13,8), color="turquoise")
+de24_32.plot(kind='barh',figsize=(10,5), color="turquoise")
 plt.xlabel('Grau de interesse médio',          
            fontdict={'family': 'serif', 
                     'color' : 'black',
