@@ -1,33 +1,29 @@
 {% extends 'pages/analise.html'%}
 {% load static %}
 
+{% block pergunta %}
+        Como os interesses variam de acordo com o gênero?
+{% endblock %}
+
 {% block conteudo %}
-    
-        <h2 style="text-align:center">Análise Exploratória de Dados</h1>
-        <h3 style="text-align:center">Bianca Dias de Carvalho</h3>
+        A partir da tabela reunindo alunos e interesses <a href="{%url 'analises_bianca'%}">desenvolvida anteriormente</a>, vamos buscar estudar
+        a distribuição dos interesses de acordo com o gênero do usuário.
 
-        <p>Essa análise exploratória de dados tem o objetivo de responder a seguinte pergunta:</p>
-        <h4 style="text-align:center">Como variam os interesses conforme as idades?</b></h4>   
+        <div class='container col-md-11 overflow-auto'> {{df | safe}}</div>
 
-        <p> Inicialmente, vamos ver como são os dados que temos: </p>
-        <h3 style="text-align:center">Tabela de informação dos alunos </h3>
-        {{alunos_head |safe}}
-        <br>
-        <h3 style="text-align:center">Tabela dos interesses </h3>
-        {{interesses_head |safe}}
-        <h3 style="text-align:center">Tabela fundida</h3>
-        {{df | safe}}
-        <p> Assim, separamos os dados em dois dataframes diferentes, um com os dados de pessoas do sexo feminino e outro com os dados de pessoas do sexo masculino: </p>
-        <h3 style="text-align:center">Tabela: sexo feminino e alto grau de interesse</h3>
-        {{df_f | safe}}
-        <h3 style="text-align:center">Tabela: sexo masculino e alto grau de interesse</h3>
-        {{df_m | safe}}
+        <p> Assim, separamos os dados em dois dataframes diferentes, um com os dados de pessoas do gênero feminino:</p>
+        <div class='container col-md-11 overflow-auto'> {{df_f | safe}}</div>
+
+        <p> E outro com pessoas do gênero masculino:</p>
+        <div class='container col-md-11 overflow-auto'> {{df_m | safe}}</div>
+
         <p> Então, fizemos visualizações simples para ver a a diferença do grau de interesse em várias categorias de acordo com o sexo: </p>
-        <img src="data:image/png;base64,{{ grafico1 |safe }}">
+        <img class="class=img-fluid" src="data:image/png;base64,{{ grafico1|safe }}">
+
         <p>Aparentemente, os interesses estão distribuidos de forma igual entre ambos os sexos. Para concluirmos isso, iremos fazer uma análise a partir de cada dataframe separadamente. </p>
-        <img src="data:image/png;base64,{{ grafico2 |safe }}">
-        <img src="data:image/png;base64,{{ grafico3 |safe }}">
-        <h3 style="text-align:center">Conclusão</h3>
-        <p>Conseguimos, assim, ver a diferença entre o grau de interesse em cada atividade. Percebemos que as mulheres, de forma geral, têm mais interresse em músicas e literatura, enquanto os homens têm mais interesse em esportes e atividades que possuem contato com a natureza.</p>
+        <img class="class=img-fluid my-3" src="data:image/png;base64,{{ grafico2 |safe }}">
+        <img class="class=img-fluid my-3" src="data:image/png;base64,{{ grafico3 |safe }}">
+        <h3 style="text-align:center my-3">Conclusão</h3>
+        <p>Conseguimos, assim, ver uma sutil diferença entre o grau de interesse em cada atividade. Percebemos que as mulheres, de forma geral, têm mais interresse em músicas e literatura, enquanto os homens têm mais interesse em esportes e atividades que possuem contato com a natureza.</p>
 
 {% endblock %}
