@@ -27,10 +27,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/login.html">Login</a>
+                    <a class="nav-link" aria-current="page" href="{%url 'login'%}">Login</a>
                 </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="/cadastro.html">Cadastrar</a>
+                      <a class="nav-link" href="{%url 'cadastro'%}">Cadastrar</a>
                   </li>
               </ul>
             </div>
@@ -51,13 +51,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link" href="/pagina_inicial.html">Página Inicial</a>
+                  <a class="nav-link" href="{%url 'pagina-inicial'%}">Página Inicial</a>
                 </li>
                   <li class="nav-item">
-                  <a class="nav-link" href="/chat.html">Chat</a>
+                  <a class="nav-link" href="{%url 'chat'%}">Chat</a>
                 </li>
                   <li class="nav-item">
-                  <a class="nav-link" href="/ranking.html">Ranking</a>
+                  <a class="nav-link" href="{%url 'ranking'%}">Ranking</a>
                 </li>
                 </li>
                 <li class="nav-item dropdown">
@@ -65,13 +65,13 @@
                     Configurações
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="/mudar_email.html">Mudar e-mail</a></li>
-                    <li><a class="dropdown-item" href="/mudar_senha.html">Mudar senha</a></li>
-                    <li><a class="dropdown-item" href="/login.html">Sair</a></li>
+                    <li><a class="dropdown-item" href="{%url 'mudar-email'%}">Mudar e-mail</a></li>
+                    <li><a class="dropdown-item" href="{%url 'mudar-senha'%}">Mudar senha</a></li>
+                    <li><a class="dropdown-item" href="{%url 'login'%}">Sair</a></li>
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="bianca/main.html">Ir para Análises</a>
+                  <a class="nav-link" href="{%url 'analises_bianca'%}">Ir para Análises</a>
                 </li>
               </ul>
             </div>
